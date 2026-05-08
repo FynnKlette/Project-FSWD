@@ -8,9 +8,9 @@ nav_order: 0
 >
 > You may delete this `attention` box.
 
-# [Project Name]
+# [Kursbörse by ASDF Development]
 
-[Include a short project description. Below, include a representative, attractive screenshot of your final web app.]
+[This platform is initially designed to allow students in Department 1 at HWR Berlin to offer their unused course slots to other students. It is also intended to make it easy to register for courses that were not initially available.]
 
 ## Sample App Screen
 
