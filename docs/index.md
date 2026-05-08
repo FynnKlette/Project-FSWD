@@ -8,13 +8,13 @@ nav_order: 0
 >
 > You may delete this `attention` box.
 
-# [Kursbörse by ASDF Development]
+# Kursbörse by ASDF Development
 
-[This platform is initially designed to allow students in Department 1 at HWR Berlin to offer their unused course slots to other students. It is also intended to make it easy to register for courses that were not initially available.]
+This platform is initially designed to allow students in Department 1 at HWR Berlin to offer their unused course slots to other students. It is also intended to make it easy to register for courses that were not initially available.
 
 ## Sample App Screen
 
-![attractive app screenshot](assets/images/fswd-intro_00.png)
+![attractive app screenshot](assets/images/KursbörseAppSkizze.png)
 
 ---
 
