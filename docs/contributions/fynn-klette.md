@@ -4,12 +4,7 @@ parent: Individual Contributions
 nav_order: 1
 ---
 
-{: .attention }
-> Create a separate, individual file for every team member, proposed naming scheme: `📄firstname-lastname.md`.
->
-> *Find and replace* (VS Code: <kbd>Ctrl</kbd>+<kbd>H</kbd> / <kbd>⌘</kbd>+<kbd>H</kbd>) `Jane Dane` with the student's name. On this template page, you will find this name 4 times (including in this `attention` box). 
->
-> You may delete this `attention` box.
+
 
 {: .no_toc }
 # Fynn Klette
@@ -25,17 +20,16 @@ nav_order: 1
 
 ### Target grade
 
-[State your target grade for this module. This is meant as a signal to your fellow team members.]
+1.7
 
 ### Personal goals
 
-[Spell out your personal goals regarding this Module, to create transparency among the team members.]
-
+I want to develop a better understanding of the structure and programming of web applications, with a particular focus on combining different file types, frameworks, and template engines such as Flask and Jinja.
 ---
 
 ## Eidesstattliche Erklärung
 
-**[Jane Dane, Matrikelnr.: 1234567]**
+**Fynn Klette, Matrikelnr.: 77205393600**
 
 Ich erkläre an Eides statt:
 
