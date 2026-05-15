@@ -25,17 +25,17 @@ nav_order: 1
 
 ### Target grade
 
-[State your target grade for this module. This is meant as a signal to your fellow team members.]
+[1,3]
 
 ### Personal goals
 
-[Spell out your personal goals regarding this Module, to create transparency among the team members.]
+[My goal is to understnd the architecture behind Web-Dev. and gain real experience in the Full-Stack-Dev. workflow which includes working with Python, Flask etc., as well as coding as a team.]
 
 ---
 
 ## Eidesstattliche Erklärung
 
-**[Jane Dane, Matrikelnr.: 1234567]**
+**[Danial Banitorfi, Matrikelnr.: 77209870745]**
 
 Ich erkläre an Eides statt:
 
