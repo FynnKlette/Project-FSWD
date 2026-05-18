@@ -25,17 +25,16 @@ nav_order: 1
 
 ### Target grade
 
-[State your target grade for this module. This is meant as a signal to your fellow team members.]
+1,5-2.0
 
 ### Personal goals
 
-[Spell out your personal goals regarding this Module, to create transparency among the team members.]
+How a web app works. Git and GitHub teamwork. Python Flask, SQLite
 
 ---
 
 ## Eidesstattliche Erklärung
-
-**[Jane Dane, Matrikelnr.: 1234567]**
+Asem Ramadan:77201310027
 
 Ich erkläre an Eides statt:
 
