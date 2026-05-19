@@ -36,6 +36,16 @@ Also the Studienbüro that has an easier insight to the students that have alrea
 
 [Illustrate the app "happy path", from the app's entry point to a completed task. You might want to show the path as (schematic) screen flows. Ensure that your "happy path" (a) is consistent with the Value Proposition, and (b) shows the features as implemented in the submitted web app.]
 
+Situation 1 (student wants to sign up ) --> Calls up our Webapp --> is not signed in --> sees sign up and sign in buttons --> clicks sign up button --> sign up form is called up --> inserts his information like student email address, full name, matrikelnumber etc. and presses sign up --> gets congratulations message and is signed in
+
+Situation 2 (student wants to insert switch offer ) --> must be logged in --> gets send to main page where they can see and filter existing switch offers --> presses create new offer button --> create offer form gets called up --> inserts the information and presses create --> offer gets validated for duplicates (functionality for later maybe?) --> offer gets created
+
+Situation 3 (student wants to find specific offer and send switch-offer request) --> must be logged in --> main page --> can see all currently open offers --> can filter for specific offers --> can click on send trade request button to a specific offer --> request to the offer creator gets send which he can accept
+
+Situation 4 (student wants to look up his siwtch request for his offer) --> must be logged in --> requests page --> can accept or decline offers --> when declined requester gets notification ; when accepted open offer gets hidden on main page --> studienbüro can see the fullfilled switch offers
+
+Situation 5 (Studienbüro) --> has special account with extra page only they can access --> gets list of fullfiled switch offers --> does their thing to make switch happen on their own Software --> clicks on switch made --> this offer gets hidden for Studienbüro too --> Studienbüro might send email to students that their switch was made OR the students can see in our software that Studienbüro successfully made switch happen
+
 ---
 
 ## Target Scope
