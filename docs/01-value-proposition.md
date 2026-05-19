@@ -39,3 +39,5 @@ Our solution provides a lean trade-like platform for the students that want to e
 ## Target Scope
 
 [Include your visual scoping of the web app (e.g., UI screens scribbles), as elaborated at start of the project as part of your Assignment.]
+
+GOTO https://github.com/FynnKlette/Project-FSWD/blob/main/docs/assets/images/Kursb%C3%B6rseAppSkizze.png
