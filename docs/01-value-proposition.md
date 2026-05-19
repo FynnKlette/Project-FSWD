@@ -29,12 +29,10 @@ Also the Studienbüro that has an easier insight to the students that have alrea
 
 ## Target User(s)
 
-- Students of the HWR Berlin, in the FB1, which want to switch their Courses with eachother.
+- Bachelor-Students of the HWR Berlin, in the FB1, which want to switch their Courses with eachother.
 - Studienbüro that wants to process the exchange of courses between students.
 
 ##  Happy Path
-
-[Illustrate the app "happy path", from the app's entry point to a completed task. You might want to show the path as (schematic) screen flows. Ensure that your "happy path" (a) is consistent with the Value Proposition, and (b) shows the features as implemented in the submitted web app.]
 
 Situation 1 (student wants to sign up ) --> Calls up our Webapp --> is not signed in --> sees sign up and sign in buttons --> clicks sign up button --> sign up form is called up --> inserts his information like student email address, full name, matrikelnumber etc. and presses sign up --> gets congratulations message and is signed in
 
@@ -59,4 +57,6 @@ Our webapp includes following functionality:
 - page with ones succesful switches
 - insight for the Studienburo where they can see completed switch-matches
 
-https://github.com/FynnKlette/Project-FSWD/blob/main/docs/assets/images/Kursb%C3%B6rseAppSkizze.png
+Specific UI dummys/prototypes we created:
+- https://github.com/FynnKlette/Project-FSWD/blob/main/docs/assets/images/Kursb%C3%B6rseAppSkizze.png
+- https://github.com/FynnKlette/Project-FSWD/blob/main/docs/assets/images/Kursb%C3%B6rseAppSkizze_sb.png
