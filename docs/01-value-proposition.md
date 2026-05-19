@@ -29,8 +29,8 @@ Also the Studienbüro that has an easier insight to the students that have alrea
 
 ## Target User(s)
 
-** Students of the HWR Berlin, in the FB1, which want to switch their Courses with eachother. 
-** Studienbüro that wants to process the exchange of courses between students.
+- Students of the HWR Berlin, in the FB1, which want to switch their Courses with eachother.
+- Studienbüro that wants to process the exchange of courses between students.
 
 ##  Happy Path
 
@@ -44,18 +44,19 @@ Situation 3 (student wants to find specific offer and send switch-offer request)
 
 Situation 4 (student wants to look up his siwtch request for his offer) --> must be logged in --> requests page --> can accept or decline offers --> when declined requester gets notification ; when accepted open offer gets hidden on main page --> studienbüro can see the fullfilled switch offers
 
-Situation 5 (Studienbüro) --> has special account with extra page only they can access --> gets list of fullfiled switch offers --> does their thing to make switch happen on their own Software --> clicks on switch made --> this offer gets hidden for Studienbüro too --> Studienbüro might send email to students that their switch was made OR the students can see in our software that Studienbüro successfully made switch happen
+Situation 5 (Studienbüro) --> has special account with extra page only they can access --> gets list of fullfiled switch offers --> does their thing to make switch happen on their own Software --> clicks on switch made --> this offer gets hidden for Studienbüro too --> the students can see their successfull switches on seperate page
 
 ---
 
 ## Target Scope
 
 Our webapp includes following functionality:
-** Sign up
-** Sign in
-** Create new course switch offer
-** Search for offers
-** Request to accept switch offer
-** insight for the Studienburo where they can see completed switch-matches
+- Sign up
+- Sign in
+- Create new course switch offer
+- Search for offers
+- Request to accept switch offer
+- page with ones succesful switches
+- insight for the Studienburo where they can see completed switch-matches
 
 https://github.com/FynnKlette/Project-FSWD/blob/main/docs/assets/images/Kursb%C3%B6rseAppSkizze.png
