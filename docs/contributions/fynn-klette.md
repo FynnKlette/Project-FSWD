@@ -24,6 +24,7 @@ nav_order: 1
 
 ### Personal goals
 
+
 I want to develop a better understanding of the structure and programming of web applications, with a particular focus on combining different file types, frameworks, and template engines such as Flask and Jinja.
 ---
 
