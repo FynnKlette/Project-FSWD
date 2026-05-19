@@ -23,12 +23,14 @@ In regards of the students that directly want to unsubscribe a course trough S.A
 
 ## Our Solution
 
-Our solution provides a lean trade-like platform for the students that want to echange/trade specific courses with eachother. That way students can just easily find switching-partners and filter for people that want to switch the course they want and send a invite to change with them. Also the Studienbüro that has an easier insight to the students that have already arranged an exchange and  can easily make the switch happen without breaking a sweat while reading trough a ton of individual documents.
+Our solution provides a lean trade-like platform for the students that want to echange/trade specific courses with eachother. That way students can just easily find switching-partners and filter for people that want to switch the course they want and send a invite to change with them.
+
+Also the Studienbüro that has an easier insight to the students that have already arranged an exchange and  can easily make the switch happen without breaking a sweat while reading trough a ton of individual documents.
 
 ## Target User(s)
 
-*Students of the HWR Berlin, in the FB1, which want to switch their Courses with eachother. 
-*Studienbüro that wants to process the exchange of courses between students.
+** Students of the HWR Berlin, in the FB1, which want to switch their Courses with eachother. 
+** Studienbüro that wants to process the exchange of courses between students.
 
 ##  Happy Path
 
@@ -38,6 +40,12 @@ Our solution provides a lean trade-like platform for the students that want to e
 
 ## Target Scope
 
-[Include your visual scoping of the web app (e.g., UI screens scribbles), as elaborated at start of the project as part of your Assignment.]
+Our webapp includes following functionality:
+** Sign up
+** Sign in
+** Create new course switch offer
+** Search for offers
+** Request to accept switch offer
+** insight for the Studienburo where they can see completed switch-matches
 
-GOTO https://github.com/FynnKlette/Project-FSWD/blob/main/docs/assets/images/Kursb%C3%B6rseAppSkizze.png
+https://github.com/FynnKlette/Project-FSWD/blob/main/docs/assets/images/Kursb%C3%B6rseAppSkizze.png
