@@ -25,7 +25,7 @@ nav_order: 1
 
 ### Target grade
 
-1,5-2.0
+1,7-2.0
 
 ### Personal goals
 
