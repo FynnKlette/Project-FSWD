@@ -25,13 +25,9 @@ nav_order: 1
 
 ### Target grade
 
-[State your target grade for this module. This is meant as a signal to your fellow team members.]
-
 My target grade is 1,7 because i think it is an achievable and realistic target goal.
 
 ### Personal goals
-
-[Spell out your personal goals regarding this Module, to create transparency among the team members.]
 
 My personal goal in regards of this Module is to extend my existing knowledge about Flask, Python and web-dev 
 
