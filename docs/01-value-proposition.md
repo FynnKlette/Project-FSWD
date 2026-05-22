@@ -56,5 +56,5 @@ Our webapp includes following functionality:
 - insight for the Studienburo where they can see completed switch-matches
 
 Specific UI dummys/prototypes we created:
-- https://github.com/FynnKlette/Project-FSWD/blob/main/docs/assets/images/Kursb%C3%B6rseAppSkizze.png
-- https://github.com/FynnKlette/Project-FSWD/blob/main/docs/assets/images/Kursb%C3%B6rseAppSkizze_sb.png
+![attractive app screenshot 1](assets/images/KursbörseAppSkizze.png)
+![attractive app screenshot 1](assets/images/KursbörseAppSkizze_sb.png)
