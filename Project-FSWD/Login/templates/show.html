@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kurstausch</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Kurstausch</h1>
+
+<form action="/anmelden" method="POST">
+    <input
+        type="text"
+        name="email"
+        placeholder="HWR-Email"
+        required>
+    
+    <input
+        type="password"
+        name="password"
+        placeholder="Passwort"
+        required>
+    <button type="submit"> Anmelden </button></form>
+
+
+<a href="/registrieren">
+<button>Registrieren</button></a>
+
+<form id=studb action="/studienbuero" method="POST">
+ <button id="stb3" type="button"> Studienbüro</button>
+</form>
+
+</body>
+</html>
