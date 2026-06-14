@@ -1,0 +1,35 @@
+body { background-color: #ffffff;}
+
+
+
+h1 {
+    font-family: Arial, sans-serif;
+    color: #000000; 
+    text-align: center;
+    flex-direction: column;
+   gap: 10px;
+}
+    body {
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center;     /* vertikal */
+    height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* untereinander */
+    gap: 10px;
+      }
+
+#stb3{
+    padding: 5px;
+    background-color: #d50c2f;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
