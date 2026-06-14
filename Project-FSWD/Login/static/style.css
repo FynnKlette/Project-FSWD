@@ -23,13 +23,21 @@ form {
       }
 
 #stb3{
-    padding: 5px;
+    padding: 3px;
     background-color: #d50c2f;
     color: rgb(255, 255, 255);
     border: none;
-    border-radius: 5px;
+    border-radius: 2px;
     cursor: pointer;
 }
 
 
 
+#stb4{
+    padding: 3px;
+    background-color: #d50c2f;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}

@@ -17,7 +17,7 @@ def anmelden():
     password = request.form("password") 
 
     if not email.endswith("@stud.hwr-berlin.de"):
-        return "Fehler: Nur HWR-E-Mails erlaubt"
+        return "Fehler: Nur HWR-E-Mails erlaubt" 
 
     if len(password) < 6:
         return "Fehler: Passwort muss mindestens 6 Zeichen haben"
@@ -30,6 +30,14 @@ def anmelden():
 @app.route("/registrieren")
 def registrieren():
     return render_template("register.html")
+
+
+@app.route("/studienbuero")
+def studbuero():
+    return render_template("studbuero.html")
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=5001)
