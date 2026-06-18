@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>hallo</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Personalbereich</h1>
+<form action="/einrichten" method="POST">
+
+</form>
+
+<div class="form-group">
+<label for="ma-id">Ma-id:</label>
+<input type="text" required>
+    
+<div class="form-group">
+<label for="Vorname">Vorname:</label>  
+<input type="text" name="Vorname" required>
+    
+<div class="form-group">
+<label for="Name">Name:</label> 
+<input type="text" name="Name" required>
+
+<div class="form-group">
+<label for="Passwort">Passwort:</label>     
+<input type="password" name="password"  required>
+    
+<div class="form-group">
+<label for="Email">Email:</label> 
+<input type="text" name="Email" required>
+    
+    
+  <button id="stb4" type="button"> Anmelden</button>
+    
+    </form>
+
+</body>
+</html>

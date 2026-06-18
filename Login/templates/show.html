@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+
+
+<head>
+     <meta charset="UTF-8"> 
+    <title>Startseite</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Kurstausch des FB1 B.Sc.</h1>
+
+<form action="/anmelden" method="POST">
+    <input
+        type="text"
+        name="email"
+        placeholder="HWR-Email"
+        required>
+    
+    <input
+        type="password"
+        name="password"
+        placeholder="Passwort"
+        required>
+    <button type="submit"> Anmelden </button></form>
+
+
+<a href="/registrieren">
+<button>Registrieren</button></a>
+
+<a href="/studienbuero">
+ <button id="stb3" type="button"> Studienbüro</button>
+</form>
+
+</body>
+</html>
