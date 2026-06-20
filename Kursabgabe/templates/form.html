@@ -6,6 +6,25 @@
 </head>
 <body>
     <h1>Neue Abgabe</h1>
-    <p>Hier kommt später das Formular.</p>
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <p>
+            {{ form.kurs.label }}<br>
+            {{ form.kurs() }}
+        </p>
+
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username() }}
+        </p>
+
+        <p>
+            {{ form.submit() }}
+        </p>
+    </form>
+
+    <p><a href="{{ url_for('abgaben_liste') }}">Zurück zur Liste</a></p>
 </body>
 </html>
