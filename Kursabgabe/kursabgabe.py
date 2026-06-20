@@ -40,19 +40,29 @@ def abgaben_liste():
     ausgabe += "</ul>"
     return ausgabe
 
-@app.route("/abgaben/neu")
+@app.route("/abgaben/neu", methods=["GET", "POST"])
 def abgabe_neu():
     # Kurse aus DB holen für das Dropdown
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     cursor.execute("SELECT kurs_id, kursbezeichnung FROM kursangebot")
     kurse = cursor.fetchall()
-    conn.close()
 
     # Form-Objekt erstellen und Choices setzen
     form = AbgabeForm()
-    form.kurs.choices = kurse   # [(1, 'Marketing SoSe26'), (2, ...), ...]
+    form.kurs.choices = kurse
 
+    # POST: Wenn das Formular abgesendet und gültig ist
+    if form.validate_on_submit():
+        cursor.execute(
+            "INSERT INTO abgabe (kurs_id, username) VALUES (?, ?)",
+            (form.kurs.data, form.username.data)
+        )
+        conn.commit()
+        conn.close()
+        return "Abgabe erfolgreich gespeichert! (Redirect kommt in 3.5)"
+
+    conn.close()
     return render_template("form.html", form=form)
 
 if __name__ == "__main__":
