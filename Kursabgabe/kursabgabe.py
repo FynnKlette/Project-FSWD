@@ -1,5 +1,5 @@
 import sqlite3
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -26,6 +26,9 @@ def abgaben_liste():
     ausgabe += "</ul>"
     return ausgabe
 
+@app.route("/abgaben/neu")
+def abgabe_neu():
+    return render_template("form.html")
 
 if __name__ == "__main__":
     app.run(debug=True, port=5002)
