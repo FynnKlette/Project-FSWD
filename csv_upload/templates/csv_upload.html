@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>csv upload form</title>
+    </head>
+    <body>
+    <div>
+        <h2>Csv Datei hier hochladen</h2>
+        <p>Achtung, die Daten in der CSV ersetzen die Kurse in der Datenbank!</p>
+    </div>
+    <div>
+        <form method="POST" action="" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        {{ form.upload_input()}}
+        <br>
+        {{ form.submit()}}
+        </form>
+    </div>
+    </body>
+</html>

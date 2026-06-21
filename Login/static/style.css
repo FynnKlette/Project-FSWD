@@ -32,7 +32,6 @@ form {
 }
 
 
-
 #stb4{
     padding: 4px;
     background-color: #d50c2f;
@@ -92,4 +91,9 @@ label {
     padding: 4px;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+.email{
+width: auto !important;
+
 }

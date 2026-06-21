@@ -10,7 +10,16 @@
 <body>
 
 <h1>Kurstausch des FB1 B.Sc.</h1>
+<br>
 
+{% with messages = get_flashed_messages(category_filter=["danger"]) %}
+    {% for message in messages %}
+      <div style="color: white; background-color: #ff4d4d; padding: 7px; margin-bottom: 15px; border-radius: 5px;">
+        {{ message }}
+      </div>
+    {% endfor %}
+{% endwith %}
+<br> 
 <form action="/anmelden" method="POST">
     <input
         type="text"
@@ -23,6 +32,7 @@
         name="password"
         placeholder="Passwort"
         required>
+    
     <button type="submit"> Anmelden </button></form>
 
 
@@ -31,7 +41,7 @@
 
 <a href="/studienbuero">
  <button id="stb3" type="button"> Studienbüro</button>
-</form>
+</form> </a>
 
 </body>
 </html>

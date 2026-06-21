@@ -1,8 +1,8 @@
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template, request,flash, redirect, url_for, session
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, SelectField
 from wtforms.validators import DataRequired, Length, Regexp, EqualTo
+import sqlite3, os
 
 app = Flask(__name__)
 
@@ -11,8 +11,12 @@ app = Flask(__name__)
 def login_seite():
     return render_template("show.html")
 
+#os für Dateipfade
+skript_ordner = os.path.dirname(os.path.abspath(__file__))
+db_path = os.path.dirname(skript_ordner)
+path = os.path.join(db_path, "tauschdaten.db")
 
-
+#Sicherheitsmaßnahme
 app.config["SECRET_KEY"] = "schlüssel"
 
 
@@ -20,17 +24,15 @@ class RegisterForm(FlaskForm):
     username = StringField("Username", validators=[DataRequired(), Length(min=3, max=15),
     Regexp(r'^[A-Za-z]+$', message="Der Username darf nur Buchstaben enthalten")])
 
-
-
     password = PasswordField("Password", validators=[DataRequired(), Length(min=8, max=20),
     Regexp( #.*? = suche vom Anfang bis zum Ende nach einem Muster, das die folgenden Bedingungen erfüllt
-        r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_.\-])[A-Za-z\d@$!%*?&_.\-]$',
+        r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_.\-])[A-Za-z\d@$!%*?&_.\-]+$',
             #kleinb.   großb.     zahl digit   sonderz.      alle erlaubten Zeichen im Passwort
         message="Das Passwort muss mindestens einen Großbuchstaben, einen Kleinbuchstaben, eine Zahl und ein Sonderzeichen (@$!%*?&_.-) enthalten.")])
     
     
 
-
+    #Zweites passwortfeld für Bestaätigung
     password_confirm = PasswordField("Passwort bestätigen", validators=[
         DataRequired(message="Bitte bestätige dein Passwort."),
         # EqualTo zeigt auf den Variablennamen des ersten Feldes ("password")
@@ -38,7 +40,7 @@ class RegisterForm(FlaskForm):
     ])
     
     matrikelnummer = StringField("Matrikelnummer", validators=[DataRequired(),
-    Regexp(r"^7720\d{8}$", message="Bitte die Matrikelnummer eingeben")])
+    Regexp(r"^7720\d{7}$", message="Bitte die Matrikelnummer eingeben")])
     
     name = StringField("Name", validators=[DataRequired(),Length(min=2, max=20),
     Regexp(r'^[A-Za-z]+$', message="Der Username darf nur Buchstaben enthalten")])
@@ -53,30 +55,39 @@ class RegisterForm(FlaskForm):
     
     studiengang = SelectField(
     "Studiengang",
-    choices=[
-        ("WI", "Wirtschaftsinformatik"),
-        ("Wirtschaftsingenieur/in - Umwelt und Nachhaltigkeit", "Wirtschaftsingenieur/in - Umwelt und Nachhaltigkeit"),
-        ("BA", "Business Administration"),
-        ("VWL", "Volkswirtschaftslehre"),
-        ("WR", "Wirtschaftsrecht"),
-        ("International Digital Business", "International Digital Business"),
-        ("Internationales Management / Management International", "Internationales Management / Management International"),
-        ("Unternehmensgründung und Unternehmensnachfolge", "Unternehmensgründung und Unternehmensnachfolge")
-    ],
-    validators=[DataRequired()]
-)
+    choices=[],
+    validators=[DataRequired()])
 
     submit = SubmitField("Registrieren")
+
+
+
+
+
+
+
+
+with sqlite3.connect(path) as conn:
+     cursor = conn.cursor()
+     cursor.execute("SELECT * FROM studiengang")
+     datenbank_zeilen = cursor.fetchall()
+      
+
+
+
 
 
 @app.route("/registrieren", methods=["GET", "POST"])
 def registrieren():
 
+    #leeres formular ertellen
     form = RegisterForm()
 
+    #für flask muss es 2x angegeben werden also ("WiInfo", "WiInfo") --> (Value für backend, Label für frontend)
+    form.studiengang.choices = [(zeile[0], zeile[0]) for zeile in datenbank_zeilen]
+   
 
     if form.validate_on_submit():
-
         username = form.username.data
         password = form.password.data
         matrikelnummer = form.matrikelnummer.data
@@ -86,29 +97,119 @@ def registrieren():
         studiengang = form.studiengang.data
 
 
-        print(username)
-        print(password)
-        print(matrikelnummer)
-        print(name)
-        print(vorname)
-        print(email)
-        print(studiengang)
-
-
-        return "Registrierung erfolgreich"
-
-
+      
+        with sqlite3.connect(path) as conn:
+            cursor = conn.cursor()
+        
+        # Übereinstimmungen bei Username, E-Mail ODER Matrikelnummer
+            cursor.execute("""
+                SELECT * FROM studenten 
+                WHERE username = ? OR email = ? OR matrikelnummer = ?
+            """, (username, email, matrikelnummer))
+            
+            existierender_user = cursor.fetchone()
+        if existierender_user is not None:
+            # Wenn man jemanden findet, abbrechen 
+            flash("Ein Account mit diesem Usernamen, dieser E-Mail oder dieser Matrikelnummer existiert bereits!", "r_danger")
+            return render_template("register.html", form=form)
+       
+        #ansonsten speichern
+        with sqlite3.connect(path) as conn:
+            cursor = conn.cursor()
+            cursor.execute
+            (
+        """INSERT INTO studenten (username, matrikelnummer, name , vorname, email  ,password , studiengang)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
+            """, (username, matrikelnummer, name , vorname, email, password , studiengang))
+            conn.commit()
+        
+        flash("Account ertellt, bitte logen Sie sich ein", "succes")
+        return redirect(url_for("login_seite"))
     return render_template("register.html",form=form)
+
+
+
+
+#Anmelden!!
+@app.route("/anmelden", methods=["GET", "POST"])
+def anmelden():
+
+ if request.method== "POST": 
+    a_email=request.form.get("email")
+    a_passwort= request.form.get("password")
+
+    with sqlite3.connect(path) as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT * FROM studenten WHERE email = ?", (a_email,))
+            student = cursor.fetchone()
+
+    if student is None:
+            flash("Der Account nicht gefunden, bitte nochmal versuchen", "danger")
+    else:
+            # Index 5, weil sich in der Tabelle Student, das Passwordt in der 6. Spalte befindet
+            db_passwort = student[5] 
+            if a_passwort!= db_passwort:
+                flash("Das Passwort ist falsch.", "danger")
+            else:
+                session["user"] = student[0] # Username in der Session speichern!
+                return redirect(url_for("dashboard")) # Weiterleitung zum Dashboard!
+            
+    # falls es nicht klappt, dann wird die Startseite neu geladen
+    return render_template("show.html")
+
+
+
+
+
+@app.route("/slog", methods=["GET", "POST"])
+def s_anmelden():
+ 
+ if  request.method == 'POST':
+     ma_id = request.form.get("ma_id")
+     m_passwort = request.form.get("password")
+     m_email = request.form.get("Email")
+
+     with sqlite3.connect(path) as conn:
+            cursor = conn.cursor() #ma_id la pk und davon alles auswähle (ganze Zeile)
+            cursor.execute("SELECT * FROM studienbüro_ma WHERE ma_id = ?", (ma_id,))
+            mitarbeiter = cursor.fetchone()
+
+     if mitarbeiter is None: 
+         flash("Angaben nicht gefunden!.", "s_danger")
+     # 4= index angabe für Spalte--> da befindet sich das Passwoert
+     else:
+         # index 4= Spalte 5 in db
+        db_passwort = mitarbeiter[4]
+        db_email = mitarbeiter[3]
+        if m_passwort != db_passwort:
+                flash("Das Passwort ist falsch.", "s_danger")
+        
+        elif m_email != db_email:
+                flash("Die Email ist falsch.", "s_danger")
+        else: 
+          session["mitarbeiter"] = mitarbeiter[0] # In Session merken
+          flash("Erfolgreich eingeloggt!", "s_success")
+          return redirect(url_for("verwaltung"))
+         
+# Seite neu laden falls die Angaben falsch sind
+ return render_template("studbuero.html")
+
+
 
 
 
 @app.route("/studienbuero")
 def studbuero():
     return render_template("studbuero.html")
+ 
 
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")
 
-
-
+@app.route("/verwaltung")
+def verwaltung():
+    return render_template("verwaltung.html")
 
 
 if __name__ == "__main__":
