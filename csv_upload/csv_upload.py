@@ -5,6 +5,8 @@ from flask_wtf.file import *
 from wtforms import *
 from db_update import *
 
+DB_PATH = '../tauschdaten.db'
+
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "schlüssel"
 
@@ -25,13 +27,32 @@ def upload_csv():
         i = update_kurse(liste)
         return render_template("erfolgreich.html", anzahl=i)
 
-    else: render_template("fehler.html")
-
     return render_template("csv_upload.html", form=form)
+
+def alle_kurse():
+    with dbcon() as connection:
+        c = connection.cursor()
+        c.execute("SELECT * FROM kursangebot")
+        alle_kurse = c.fetchall()
+        c.close()
+    return alle_kurse
+
+
+def alle_module():
+    with dbcon() as connection:
+        c = connection.cursor()
+        c.execute("SELECT * FROM modul")
+        alle_module = c.fetchall()
+        c.close()
+    return alle_module
 
 @app.route("/kurse", methods=['Get'])
 def kurse():
-    return "hier werden die kurse in db angezeigt"
+    return render_template("kurse.html", kurse=alle_kurse())
+
+@app.route("/module", methods=['Get'])
+def module():
+    return render_template("module.html", module=alle_module())
 
 if __name__ == "__main__":
     app.run(debug=True, port=5003)
