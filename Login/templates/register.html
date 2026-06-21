@@ -8,7 +8,15 @@
 <body>
 
 <h1>Account erstellen</h1> 
-
+<br>
+{% with messages = get_flashed_messages(category_filter=["r_danger"]) %}
+    {% for message in messages %}
+      <div style="color: white; background-color: #ff4d4d; padding: 7px; margin-bottom: 15px; border-radius: 5px;">
+        {{ message }}
+      </div>
+    {% endfor %}
+{% endwith %}
+<br> 
 <form action="/registrieren" method="POST">
     {{ form.hidden_tag() }} <div>
         {{ form.username.label }}<br>
@@ -36,7 +44,7 @@
 
     <div>
         {{ form.email.label }}<br>
-        {{ form.email}}
+        {{ form.email(class="email") }}
         {% for error in form.email.errors %}
             <span style="color: red;">{{ error }}</span>
         {% endfor %}
