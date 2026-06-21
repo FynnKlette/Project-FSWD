@@ -1,5 +1,5 @@
 import sqlite3
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for, flash
 from flask_wtf import FlaskForm
 from wtforms import SelectField, StringField, SubmitField
 from wtforms.validators import DataRequired
@@ -24,21 +24,16 @@ class AbgabeForm(FlaskForm):
 def abgaben_liste():
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
-
     cursor.execute("""
         SELECT abgabe.abgabe_id, kursangebot.kursbezeichnung, abgabe.username, abgabe.zeitpunkt
         FROM abgabe
         JOIN kursangebot ON abgabe.kurs_id = kursangebot.kurs_id
+        ORDER BY abgabe.zeitpunkt ASC
     """)
     abgaben = cursor.fetchall()
     conn.close()
 
-    # Vorerst als Text ausgeben — 
-    ausgabe = "<h1>Abgaben</h1><ul>"
-    for a in abgaben:
-        ausgabe += f"<li>#{a[0]}: {a[1]} (von {a[2]}, am {a[3]})</li>"
-    ausgabe += "</ul>"
-    return ausgabe
+    return render_template("liste.html", abgaben=abgaben)
 
 @app.route("/abgaben/neu", methods=["GET", "POST"])
 def abgabe_neu():
@@ -60,7 +55,8 @@ def abgabe_neu():
         )
         conn.commit()
         conn.close()
-        return "Abgabe erfolgreich gespeichert! (Redirect kommt in 3.5)"
+        flash("Abgabe erfolgreich gespeichert!", "success")
+        return redirect(url_for("abgaben_liste"))
 
     conn.close()
     return render_template("form.html", form=form)
