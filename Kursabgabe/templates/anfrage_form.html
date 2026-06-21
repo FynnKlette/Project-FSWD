@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Neue Anfrage</title>
+</head>
+<body>
+    <h1>Neue Anfrage</h1>
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <p>
+            {{ form.kurs.label }}<br>
+            {{ form.kurs() }}
+        </p>
+
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username() }}
+        </p>
+
+        <p>
+            {{ form.submit() }}
+        </p>
+    </form>
+
+    <p><a href="{{ url_for('anfragen_liste') }}">Zurück zur Liste</a></p>
+</body>
+</html>
