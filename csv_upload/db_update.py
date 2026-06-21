@@ -34,11 +34,7 @@ def update_kurse(csv_list):
 
     clear_kurse()
 
-    if len(csv_list) > 0 and "modul" in str(csv_list[0]).lower():
-        liste = csv_list[1:]
-    else:
-        liste = csv_list
-    
+    liste = csv_list[1:]
 
     with dbcon() as connection:
         c = connection.cursor()
