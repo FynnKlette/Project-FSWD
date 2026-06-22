@@ -40,9 +40,19 @@ with sqlite3.connect(db_path) as conn:
     hashdp= bcrypt.hashpw(passwortnr3, bcrypt.gensalt())
      
     cursor.execute("""  
-    INSERT INTO studienbüro_ma (ma_id, vorname, name, email, password)
+    INSERT or ignore INTO studienbüro_ma (ma_id, vorname, name, email, password)
     VALUES (?,?,?,?,?)
     """, (11111111, 'Noah', 'Namo','noah@hwr-berlin.de', hashdp))
+
+
+
+    passwortnr3= "hallo".encode('utf-8')
+    hashdp2= bcrypt.hashpw(passwortnr3, bcrypt.gensalt())
+     
+    cursor.execute("""  
+    INSERT or ignore INTO studienbüro_ma (ma_id, vorname, name, email, password)
+    VALUES (?,?,?,?,?)
+    """, (21212121, 'Peter', 'Parker','p@hwr-berlin.de', hashdp2))
 
 
 conn.commit()
