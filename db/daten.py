@@ -47,6 +47,6 @@ with sqlite3.connect(db_path) as conn:
 
 conn.commit()
 
-print("erfolg")
+print("erfolgreich")
 
 
