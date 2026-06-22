@@ -4,6 +4,7 @@ from wtforms import StringField, PasswordField, SubmitField, SelectField
 from wtforms.validators import DataRequired, Length, Regexp, EqualTo
 import sqlite3, os
 
+
 app = Flask(__name__)
 
 
@@ -153,6 +154,7 @@ def anmelden():
             else:
                 session["user"] = student[0] # Username in der Session speichern!
                 return redirect(url_for("dashboard")) # Weiterleitung zum Dashboard!
+                #open start application()
             
     # falls es nicht klappt, dann wird die Startseite neu geladen
     return render_template("show.html")
