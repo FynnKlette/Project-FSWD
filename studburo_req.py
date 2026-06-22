@@ -4,7 +4,7 @@ from flask import request
 from flask import session
 from flask_login import current_user
 from .config import EXEMPT_METHODS
-from csv_upload.csv_upload import dbcon
+from csv_upload import dbcon
 
 def studienburo_required(func):
 
