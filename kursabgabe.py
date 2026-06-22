@@ -7,7 +7,7 @@ from wtforms.validators import DataRequired
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "asem-dev-key-2026"
 
-DB_PATH = "../tauschdaten.db"
+DB_PATH = "tauschdaten.db"
 
 
 class AbgabeForm(FlaskForm):
