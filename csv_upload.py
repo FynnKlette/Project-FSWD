@@ -1,20 +1,19 @@
-from flask import Flask
+from flask import Flask, Blueprint
 from flask import render_template
 from flask_wtf import FlaskForm
 from flask_wtf.file import *
 from wtforms import *
 from db_update import *
 
-DB_PATH = '../tauschdaten.db'
+DB_PATH = 'tauschdaten.db'
 
-app = Flask(__name__)
-app.config["SECRET_KEY"] = "schlüssel"
+csv_page = Blueprint("csv_page", __name__)
 
 class UploadForm(FlaskForm):
     upload_input = FileField("CSV Hochladen",validators=[FileAllowed(['csv']), FileRequired()])
     submit = SubmitField("Hochladen")
 
-@app.route("/upload_csv", methods=['Get', 'Post'])
+@csv_page.route("/upload_csv", methods=['Get', 'Post'])
 def upload_csv():
     form = UploadForm()
 
@@ -46,13 +45,10 @@ def alle_module():
         c.close()
     return alle_module
 
-@app.route("/kurse", methods=['Get'])
+@csv_page.route("/kurse", methods=['Get'])
 def kurse():
     return render_template("kurse.html", kurse=alle_kurse())
 
-@app.route("/module", methods=['Get'])
+@csv_page.route("/module", methods=['Get'])
 def module():
     return render_template("module.html", module=alle_module())
-
-if __name__ == "__main__":
-    app.run(debug=True, port=5003)

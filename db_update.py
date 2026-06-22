@@ -2,7 +2,7 @@ import sqlite3
 import io
 import csv
 
-DB_PATH = '../tauschdaten.db'
+DB_PATH = 'tauschdaten.db'
 
 def dbcon():
     connection = sqlite3.connect(DB_PATH)

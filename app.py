@@ -1,8 +1,12 @@
 from flask import *
 from login import app as login
+from csv_upload import csv_page
 
 app = Flask(__name__)
+app.register_blueprint(csv_page)
+app.config["SECRET_KEY"] = "schlüssel"
 
+DB_PATH = 'tauschdaten.db'
 
 @app.route("/")
 def startapp():
