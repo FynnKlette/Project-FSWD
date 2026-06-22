@@ -3,6 +3,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, SelectField
 from wtforms.validators import DataRequired, Length, Regexp, EqualTo
 import sqlite3, os
+import bcrypt 
 
 
 app = Flask(__name__)
@@ -14,8 +15,7 @@ def login_seite():
 
 #os für Dateipfade
 skript_ordner = os.path.dirname(os.path.abspath(__file__))
-db_path = os.path.dirname(skript_ordner)
-path = os.path.join(db_path, "tauschdaten.db")
+path = os.path.join(skript_ordner, "tauschdaten.db")
 
 #Sicherheitsmaßnahme
 app.config["SECRET_KEY"] = "schlüssel"
@@ -23,7 +23,7 @@ app.config["SECRET_KEY"] = "schlüssel"
 
 class RegisterForm(FlaskForm):
     username = StringField("Username", validators=[DataRequired(), Length(min=3, max=15),
-    Regexp(r'^[A-Za-z]+$', message="Der Username darf nur Buchstaben enthalten")])
+    Regexp(r'^[A-Za-z\d]+$', message="Der Username darf nur Buchstaben enthalten")])
 
     password = PasswordField("Password", validators=[DataRequired(), Length(min=8, max=20),
     Regexp( #.*? = suche vom Anfang bis zum Ende nach einem Muster, das die folgenden Bedingungen erfüllt
@@ -44,7 +44,7 @@ class RegisterForm(FlaskForm):
     Regexp(r"^7720\d{7}$", message="Bitte die Matrikelnummer eingeben")])
     
     name = StringField("Name", validators=[DataRequired(),Length(min=2, max=20),
-    Regexp(r'^[A-Za-z]+$', message="Der Username darf nur Buchstaben enthalten")])
+    Regexp(r'^[A-Za-z]+$', message="Der Nachname darf nur Buchstaben enthalten")])
     
 
     vorname = StringField("Vorname", validators=[DataRequired(),Length(min=2, max=20),
@@ -60,8 +60,6 @@ class RegisterForm(FlaskForm):
     validators=[DataRequired()])
 
     submit = SubmitField("Registrieren")
-
-
 
 
 
@@ -97,11 +95,10 @@ def registrieren():
         email = form.email.data
         studiengang = form.studiengang.data
 
-
+        hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
       
         with sqlite3.connect(path) as conn:
             cursor = conn.cursor()
-        
         # Übereinstimmungen bei Username, E-Mail ODER Matrikelnummer
             cursor.execute("""
                 SELECT * FROM studenten 
@@ -117,13 +114,11 @@ def registrieren():
         #ansonsten speichern
         with sqlite3.connect(path) as conn:
             cursor = conn.cursor()
-            cursor.execute
-            (
-        """INSERT INTO studenten (username, matrikelnummer, name , vorname, email  ,password , studiengang)
+            cursor.execute(
+             """INSERT INTO studenten (username, matrikelnummer, name , vorname, email  ,password , studiengang)
                 VALUES (?, ?, ?, ?, ?, ?, ?)
-            """, (username, matrikelnummer, name , vorname, email, password , studiengang))
+             """, (username, matrikelnummer, name , vorname, email, hashed_password , studiengang))
             conn.commit()
-        
         flash("Account ertellt, bitte logen Sie sich ein", "succes")
         return redirect(url_for("login_seite"))
     return render_template("register.html",form=form)
@@ -145,11 +140,17 @@ def anmelden():
             student = cursor.fetchone()
 
     if student is None:
-            flash("Der Account nicht gefunden, bitte nochmal versuchen", "danger")
+            flash("Den Account nicht gefunden, bitte nochmal versuchen", "danger")
     else:
             # Index 5, weil sich in der Tabelle Student, das Passwordt in der 6. Spalte befindet
-            db_passwort = student[5] 
-            if a_passwort!= db_passwort:
+            db_passwort_hash = student[5] 
+            
+            #verschlüsseltes Passwort wird übersetzt
+            if isinstance(db_passwort_hash, str):
+                db_passwort_hash=db_passwort_hash.encode('utf-8')
+            
+
+            if not bcrypt.checkpw(a_passwort.encode('utf-8'), db_passwort_hash):
                 flash("Das Passwort ist falsch.", "danger")
             else:
                 session["user"] = student[0] # Username in der Session speichern!
@@ -180,17 +181,20 @@ def s_anmelden():
          flash("Angaben nicht gefunden!.", "s_danger")
      # 4= index angabe für Spalte--> da befindet sich das Passwoert
      else:
-         # index 4= Spalte 5 in db
-        db_passwort = mitarbeiter[4]
+        mh_passwort = mitarbeiter[4]
         db_email = mitarbeiter[3]
-        if m_passwort != db_passwort:
+        
+        if isinstance(mh_passwort, str):
+            mh_passwort=mh_passwort.encode('utf-8')
+
+         # index 4= Spalte 5 in db
+        if not bcrypt.checkpw(m_passwort.encode('utf-8'), mh_passwort):
                 flash("Das Passwort ist falsch.", "s_danger")
         
         elif m_email != db_email:
                 flash("Die Email ist falsch.", "s_danger")
         else: 
           session["mitarbeiter"] = mitarbeiter[0] # In Session merken
-          flash("Erfolgreich eingeloggt!", "s_success")
           return redirect(url_for("verwaltung"))
          
 # Seite neu laden falls die Angaben falsch sind

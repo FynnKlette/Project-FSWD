@@ -25,7 +25,7 @@ with sqlite3.connect(db_path) as conn:
         vorname TEXT,
         name TEXT,
         email TEXT,
-        password TEXT
+        password TEXT NOT NULL
     )
     """)
 

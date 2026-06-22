@@ -6,6 +6,8 @@
      <meta charset="UTF-8"> 
     <title>Startseite</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+
 </head>
 <body>
 
@@ -19,6 +21,16 @@
       </div>
     {% endfor %}
 {% endwith %}
+
+{% with messages = get_flashed_messages(category_filter=["succes"]) %}
+    {% for message in messages %}
+      <div style="color: white; background-color: #22da1f; padding: 7px; margin-bottom: 15px; border-radius: 5px;">
+        {{ message }}
+      </div>
+    {% endfor %}
+{% endwith %}
+
+
 <br> 
 <form action="/anmelden" method="POST">
     <input
