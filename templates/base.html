@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+    <title>{% block TITLE %}{% endblock %} Tauschtool</title>
+</head>
+
+<body>
+
+    <h1>HWR-Kurstausch</h1>
+    <h2>FB 1 Bachelor Sc.</h2>
+    
+    {% block NAV %}
+    <ul>
+        <li><a href="/dashboard">Home</a></li>
+        <li><a href="/">Kursabgabe</a></li>
+
+    </ul>
+    {% endblock %}
+
+<section class="content">
+    <header>{% block HEADER %}{% endblock %}</header>
+    {% block CONTENT %}{% endblock %}
+</section>
+</body>
+
+</html>
