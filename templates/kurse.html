@@ -1,0 +1,36 @@
+<h2> Hier kannst du die Kurse ansehen! Anzahl aller Kurse in DB: {{ kurse|length }}</h2>
+<div>
+    {% if kurse|length > 0 %}
+    {# kursid ,kursbezeichnung ,modulid, semester, dozent, zeiten, sprache #}
+    <table>
+        <thead>
+            <tr>
+                <th>Kursnummer</th>
+                <th>Kursbezeichnung</th>
+                <th>Modulnummer</th>
+                <th>Semester</th>
+                <th>Dozierende</th>
+                <th>Veranstaltungstyp</th>
+                <th>Sprache</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for kurs in kurse %}
+        <tr>
+            <td>{{kurs[0]}}</td>
+            <td>{{kurs[1]}}</td>
+            <td>{{kurs[2]}}</td>
+            <td>{{kurs[3]}}</td>
+            <td>{{kurs[4]}}</td>
+            <td>{{kurs[5]}}</td>
+            <td>{{kurs[6]}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% elif  kurse|length == 0 %}
+    <p> Es gibt keine Kurse in der DB</p>
+    {% else %}
+    <p> Ein Fehler ist aufgetretten! </p>
+    {% endif %}
+</div>

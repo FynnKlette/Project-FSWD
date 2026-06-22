@@ -1,0 +1,33 @@
+<h2> Hier kannst du die Module ansehen! Anzahl aller Module in DB: {{ module|length }}</h2>
+<div>
+    {% if module|length > 0 %}
+    {# modulid ,modulbeziechnung ,etcs, sws, prüfungsform #}
+
+    <table>
+        <thead>
+            <tr>
+                <th>Modulnummer</th>
+                <th>Modulbezeichnung</th>
+                <th>ETCS</th>
+                <th>SWS</th>
+                <th>prüfungsform</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for modul in module %}
+        <tr>
+            <td>{{modul[0]}}</td>
+            <td>{{modul[1]}}</td>
+            <td>{{modul[2]}}</td>
+            <td>{{modul[3]}}</td>
+            <td>{{modul[4]}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% elif  module|length == 0 %}
+    <p> Es gibt keine Module in der DB</p>
+    {% else %}
+    <p> Ein Fehler ist aufgetretten! </p>
+    {% endif %}
+</div>
