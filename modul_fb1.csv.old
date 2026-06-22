@@ -1,0 +1,312 @@
+﻿modul_id,modulbezeichnung,etcs,sws,prüfungsform,veranstaltungstyp
+BA-BUS-M01-F01,Einführung in die Betriebswirtschaftslehre ,0,,Kombinierte Prüfung,seminaristischer Unterricht
+BA-BUS-M01-F02,Projektmanagement ,2,5,,Kombinierte Prüfung,seminaristischer Unterricht
+BA-BUS-M01-F03,Wissenschaftliches Arbeiten ,2,5,,Kombinierte Prüfung,seminaristischer Unterricht
+BA-BUS-M02-F01,Personal und Organisation ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+BUS-M02-F01,Personal und Organisation ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+BA-BUS-M03-F01,Investition und Finanzierung ,5,,Klausur,seminaristischer Unterricht
+BUS-M03-F01,Investition und Finanzierung ,5,,Klausur,seminaristischer Unterricht
+BA-BUS-M04-F01,Marketing ,5,,Klausur,seminaristischer Unterricht
+BUS-M04-F01,Marketing ,5,,Klausur,seminaristischer Unterricht
+BA-BUS-M05-F01,Externes Rechnungswesen ,5,,Klausur,seminaristischer Unterricht
+BUS-M05-F01,Grundlagen des externen Rechnungswesens ,5,,Klausur,seminaristischer Unterricht
+BA-BUS-M06-F01,Internes Rechnungswesen ,5,,Klausur,seminaristischer Unterricht
+BUS-M06-F01,Grundlagen des internen Rechnungswesens/Controllings ,5,,Klausur,seminaristischer Unterricht
+BA-BUS-M07-F01,Unternehmensbesteuerung ,5,,Klausur,seminaristischer Unterricht
+BUS-M07-F01,Grundlagen der Unternehmensbesteuerung ,5,,Klausur,seminaristischer Unterricht
+BA-BUS-M08-F01,Instrumente des Controllings ,5,,Klausur,seminaristischer Unterricht
+BUS-M08-F01,Instrumente des Controllings ,5,,Klausur,seminaristischer Unterricht
+BA-BUS-M09-F01,Strategisches Management ,5,,Mündliche Prüfung (P),seminaristischer Unterricht
+BUS-M09-F01,Strategisches Management ,5,,Mündliche Prüfung (P),seminaristischer Unterricht
+BA-BUS-M10-F01,Operations Management ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+BUS-M10-F01,Operations Management ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+BUS-M11-F01,Unternehmenssimulation und Teamentwicklung ,5,,Leistungstest (undifferenziert),Praktische Übung
+BUS-M12-F01,Wirtschaftswissenschaftliches Seminar ,5,,Hausarbeit,seminaristischer Unterricht
+BUS-M19-F01,Interdisziplinäres Themenfeld ,10,,Kombinierte Prüfung,seminaristischer Unterricht
+BA-BUS-M20-F01,Mikroökonomie ,5,,Klausur,seminaristischer Unterricht
+BUS-M20-F01,Mikroökonomie: Allokation und Verteilung ,5,,Klausur,seminaristischer Unterricht
+BA-BUS-M21-F01,Makroökonomie ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+BUS-M21-F01,Makroökonomie: Konjunktur und Beschäftigung ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+BUS-M22-F01,Internationale Wirtschaft ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+BA-BUS-M23-F01,Recht 1 ,5,,Klausur,seminaristischer Unterricht
+BUS-M23-F01,Privates Wirtschaftsrecht ,5,,Klausur,seminaristischer Unterricht
+BUS-M24-F01,Recht im Unternehmen (Gesellschaftsrecht) ,2,5,,Klausur,seminaristischer Unterricht
+BUS-M24-F02,Recht im Unternehmen (Arbeitsrecht) ,2,5,,Klausur,seminaristischer Unterricht
+BA-BUS-M25-F01,Nachhaltige Transformation von Unternehmen und Gesellschaft ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+BUS-M25-F01,Unternehmen, Betrieb, Arbeit,5,,Kombinierte Prüfung,seminaristischer Unterricht
+BUS-M26-F01,Politische Ökonomie und Sozialstruktur der modernen Gesellschaft ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+BA-BUS-M27-F01,Wirtschaftsmathematik ,5,,Klausur,seminaristischer Unterricht
+AC-Mathe-BK,Wirtschaftsmathematischer Brückenkurs im Semester ,0,,Keine Prüfung,Seminar
+BUS-M27-F01,Wirtschaftsmathematik ,5,,Klausur,seminaristischer Unterricht
+BA-BUS-M28-F01,Statistik ,5,,Klausur,seminaristischer Unterricht
+BUS-M28-F01,Statistik ,5,,Klausur,seminaristischer Unterricht
+BA-BUS-M29-F01,Wirtschaftsinformatik 1 ,5,,Leistungstest,seminaristischer Unterricht
+BUS-M29-F01,Grundlagen der Wirtschaftsinformatik ,5,,Leistungstest (undifferenziert),seminaristischer Unterricht
+AC-Mathe-VK,Wirtschaftsmathematischer Vorkurs (Vor Semesterstart) ,0,,Keine Prüfung,Seminar
+Spanisch-F02,Wirtschaftsspanisch A 2 ,5,,Kombinierte Prüfung,Praktische Übung
+Spanisch-F03,Wirtschaftsspanisch B 1.1,5,,Kombinierte Prüfung,Praktische Übung
+Spanisch-F04,Wirtschaftsspanisch B 1.2,5,,Kombinierte Prüfung,Praktische Übung
+Spanisch-F05,Wirtschaftsspanisch B 2.1,5,,Kombinierte Prüfung,Praktische Übung
+BA-BUS-M30-F01,Wirtschaftsinformatik 2 ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+Spanisch-F06,Wirtschaftsspanisch B 2.2,5,,Kombinierte Prüfung,Praktische Übung
+Franz-F03,Wirtschaftsfranzösisch B 1.1,5,,Kombinierte Prüfung,Praktische Übung
+BUS-M30-F01,Betriebliche Informationssysteme ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+Franz-F04,Wirtschaftsfranzösisch B 1.2,5,,Kombinierte Prüfung,Praktische Übung
+Franz-F05,Wirtschaftsfranzösisch B 2.1,5,,Kombinierte Prüfung,Praktische Übung
+Franz-F06,Wirtschaftsfranzösisch B 2.2,5,,Kombinierte Prüfung,Praktische Übung
+BUS-M39-F01,Praxisseminar ,1,,Leistungstest (undifferenziert),Seminar
+Deutsch-F01,Wirtschaftsdeutsch A 1.1,5,,Kombinierte Prüfung,Praktische Übung
+Deutsch-F02,Wirtschaftsdeutsch A 1.2 ,5,,Kombinierte Prüfung,Praktische Übung
+Deutsch-F03,Wirtschaftsdeutsch A 2.1 ,5,,Kombinierte Prüfung,Praktische Übung
+Deutsch-F04,Wirtschaftsdeutsch A 2.2,5,,Kombinierte Prüfung,Praktische Übung
+Deutsch-F05,Wirtschaftsdeutsch B 1.1,5,,Kombinierte Prüfung,Praktische Übung
+Deutsch-F06,Wirtschaftsdeutsch B 1.2,5,,Kombinierte Prüfung,Praktische Übung
+Deutsch-F07,Wirtschaftsdeutsch B 2.1,5,,Kombinierte Prüfung,Praktische Übung
+Deutsch-F08,Wirtschaftsdeutsch B 2.2,5,,Kombinierte Prüfung,Praktische Übung
+Deutsch-F09,Wirtschaftsdeutsch C 1,5,,Kombinierte Prüfung,Praktische Übung
+BA-BUS-M40-F01,Entrepreneurial Project ,5,,Kombinierte Prüfung,Projektseminar
+MPE-M01-F22,Feminist Economics,6,5,,Hausarbeit,Seminar
+UntRe-M11-F01,Forschungsmethodisches Seminar,6,,Leistungstest (undifferenziert),seminaristischer Unterricht
+POLEI-M11-F01,Research Seminar,6,,Leistungstest (undifferenziert),seminaristischer Unterricht
+MM-M10-F01,Tutorial Seminar II,4,,Leistungstest (undifferenziert),seminaristischer Lehrvortrag
+MM-M06-F01,Marketing Project and Project Management,6,5,,Projektbericht (P),seminaristischer Unterricht
+MM-M07-F01,Marketing Analytics,6,5,,Kombinierte Prüfung,Übung am PC
+MM-M11-F01,Research Seminar,6,,Leistungstest (undifferenziert),seminaristischer Lehrvortrag
+EcoPol-F08,Modelling in Ecological Economics,6,5,,Kombinierte Prüfung,Seminar
+EcoPol-F09,Labour and Ecology,6,5,,Hausarbeit,seminaristischer Unterricht
+MA-Eco-M11-F01,Research Seminar,6,,Leistungstest (undifferenziert),seminaristischer Unterricht
+IMM-M08-F02,International Marketing Project,6,5,,Kombinierte Prüfung,seminaristischer Unterricht
+IMM-M09-F04,Current Issues: Data-driven Marketing,6,5,,Klausur,seminaristischer Unterricht
+IMM-M10-F02,Tutorial Seminar II,4,,Leistungstest (undifferenziert),seminaristischer Unterricht
+IMM-M11-F02,Research Seminar,6,,Leistungstest (undifferenziert),seminaristischer Unterricht
+IMM-M06-F04,Digital Marketing,6,5,,Kombinierte Prüfung,Seminar
+IMM-M06-F06,Marketing and Innovation for Impact-Driven and Sustainable Businesses,6,5,,Kombinierte Prüfung,Seminar
+IBCON-M11-F01,Research Seminar,6,,Leistungstest (undifferenziert),seminaristischer Unterricht
+GSCOM-M11-F01,Research Seminar,6,,Leistungstest (undifferenziert),seminaristischer Lehrvortrag
+FACT-M08-F02,Besteuerung grenzüberschreitender Transaktionen,6,5,,Kombinierte Prüfung,seminaristischer Lehrvortrag
+FACT-M23-F01,Forschungsmethodisches Seminar,6,,Leistungstest (undifferenziert),seminaristischer Lehrvortrag
+BIPM-M11-F01,Research Seminar,6,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BA-ISUM-M11-F01...,Sustainable Operations Management II,5,,Klausur,seminaristischer Lehrvortrag
+BA-ISUM-M14-F01...,Integrated Sustainability Reporting,5,,Kombinierte Prüfung,seminaristischer Lehrvortrag
+BA-ISUM-M17-F01...,Statistics & Applications in Data Science,5,,Klausur,seminaristischer Lehrvortrag
+BA-ISUM-M22-F01...,Entrepreneurial Project III,10,,Portfolio,seminaristischer Lehrvortrag
+BA-ISUM-M24-F01...,Storytelling for Business & Business Ethics,5,,Kombinierte Prüfung,Übung
+BA-ISUM-M09-F01...,Sustainability Marketing,5,,Kombinierte Prüfung,seminaristischer Lehrvortrag
+BA-ISUM-M23-F01...,Academic Writing & Managing Complexity ,5,,Kombinierte Prüfung,Übung
+BA-ISUM-M21-F04...,Entrepreneurial Project II,5,,Portfolio,Projektseminar, Action-learning
+BA-IDB-M09-F01,Digitales Performance Management ,5,,Klausur,seminaristischer Lehrvortrag
+BA-IDB-M14-F01,Digital Literacy IV: Software Architectures,5,,Kombinierte Prüfung,seminaristischer Lehrvortrag
+BA-IDB-M17-F01,Statistics & Applications in Data Science,5,,Klausur,seminaristischer Lehrvortrag
+BA-IDB-M22-F01,Entrepreneurial Project III,10,,Portfolio,Projektseminar, Action-learning
+BA-IDB-M24-F01,Storytelling for Business & Business and Data Ethics,5,,Kombinierte Prüfung,seminaristischer Lehrvortrag
+BA-IDB-M08-F01,Digital Marketing,5,,Kombinierte Prüfung,seminaristischer Lehrvortrag
+BA-IDB-M11-F01,Digital Literacy I: Coding,5,,Portfolio,seminaristischer Lehrvortrag
+BA-IDB-M21-F04,Entrepreneurial Project II,5,,Portfolio,Projektseminar, Action-learning
+BA-IDB-M23-F03,Academic Writing & Managing Complexity ,5,,Kombinierte Prüfung,Übung
+BA-BUS-MSQ-F01,Selbstmanagement ,2,5,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BA-BUS-MSQ-F02,Kommunikation und Präsentation ,2,5,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BA-BUS-MSQ-F04,Tabellenkalkulation für Entscheidungen in der Wirtschaft (Excel),2,5,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BA-BUS-MSQ-F05,Gesprächsführung,2,5,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BA-BUS-MSQ-F06,Interkulturelle Kompetenz,2,5,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BA-BUS-MSQ-F08,Design Thinking,2,5,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BA-BUS-MSQ-F12,Generative AI,2,5,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BA-BUS-MSP-F06,Business English B1: Compact Refresher,2,5,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BA-BUS-MSP-F02,Business English and Communication B1+,5,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BA-BUS-MSP-F03,Business English and Communication B2 ,5,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BA-BUS-MSP-F04,Business English and Communication B2+ ,5,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BA-BUS-MSP-F05,Business English and Communication C1 ,5,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BUS-MSP-F03,Business English B 2.1, Part 1 ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BUS-MSP-F04,Business English B 2.1, Part 2 ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BUS-MSP-F05,Business English B 2.2, Part 1 ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BUS-MSP-F06,Business English B 2.2, Part 2 ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BUS-MSP-F07,Business English C 1.1, Part 1 ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BUS-MSP-F08,Business English C 1.1, Part 2 ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BUS-MSP-F09,Business English C 1.2, Part 1 ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BUS-MSP-F10,Business English C 1.2, Part 2 ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+CAF-MBS-F01,Internationale Unternehmensbesteuerung,5,,Mündliche Prüfung (P),seminaristischer Unterricht
+CAF-MFin-F01,Finanzierungs- und Investitionspolitik der Unternehmen ,5,,Klausur,seminaristischer Unterricht
+CAF-MFin-F02,Finanzwirtschaftliche Analyse und Bewertung ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+CAF-MFin-F03,Finanzwirtschaft der Kapitalmärkte ,5,,Mündliche Prüfung (P),seminaristischer Unterricht
+CAF-MFin-F03,Finanzwirtschaft der Kapitalmärkte ,5,,Klausur,seminaristischer Unterricht
+CAF-MFin-F06,Quantitative and Computational Finance,5,,Kombinierte Prüfung,seminaristischer Unterricht
+CAF-MM-F01,Produkt- und Vertriebsmanagement ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+CAF-MM-F02,Marktforschung ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+CAF-MM-F03,Kommunikation und Käuferverhalten ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+CAF-MM-F05,Digital Strategies for Public Communication, Social Media and Marketing,5,,Kombinierte Prüfung,seminaristischer Unterricht
+CAF-MM-F08,Diversity in Consumer Research,5,,Kombinierte Prüfung,Seminar
+CAF-MM-F09,Online Marketing,5,,Kombinierte Prüfung,seminaristischer Unterricht
+CAF-MPO-F01,Personalmanagement ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+CAF-MPO-F02,Organisationsgestaltung ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+CAF-MPO-F03,Rechtliche Aspekte von Personal und Organisation,5,,Kombinierte Prüfung,seminaristischer Unterricht
+CAF-MPO-F05,Führung und Teamarbeit in hybriden Arbeitsumgebungen ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+CAF-MPO-F06,Management Consulting,5,,Kombinierte Prüfung,seminaristischer Unterricht
+CAF-MRE-F01,Bilanzierung und Recht der Rechnungslegung ,5,,Klausur,seminaristischer Unterricht
+CAF-MRE-F02,Internationale Rechnungslegung ,5,,Klausur,seminaristischer Unterricht
+CAF-MRE-F03,Konzernrechnungslegung / Konzerncontrolling,5,,Klausur,seminaristischer Unterricht
+EcoPol-F06,The Politics of Social Cohesion in Europe,6,5,,Kombinierte Prüfung,seminaristischer Unterricht
+CAF-MSCOM-F01,Beschaffungs- und Produktionsmanagement ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+CAF-MSCOM-F02,Distributions- und Transportmanagement ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+CAF-MSCOM-F03,Supply Chain Management und Informationssysteme,5,,Kombinierte Prüfung,seminaristischer Unterricht
+CAF-MSCOM-F06,Operations Technology and Methods,5,,Kombinierte Prüfung,seminaristischer Unterricht
+QS-M01-F01,Introduction to Time Series Analysis,5,,Klausur,seminaristischer Unterricht
+QS-M01-F04,Platforms and Digital Business Ecosystems,5,,Portfolio,seminaristischer Unterricht
+QS-M01-F05,International Management,5,,Kombinierte Prüfung,seminaristischer Unterricht
+IBMAN-MI-F01,Management Issues: Strategy and Innovation,5,,Kombinierte Prüfung,seminaristischer Unterricht
+IBMAN-M32-F01,Communication and Interaction in a Professional Context ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+IBMAN-M42-F01,Research Methodology,5,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+IBMAN-M41-F01,Supervision,5,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+IBMAN-M10-F01,Business Simulation ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+IBMAN-M34-F01,History, Politics and Economics of the Host Country ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+IBMAN-M33-F01,Intercultural Communication ,3,,Kombinierte Prüfung,Projektseminar, Action-learning
+IBMAN-M22-F01,International Economics,5,,Kombinierte Prüfung,seminaristischer Unterricht
+IBMAN-M07-F01,Strategic Management,5,,Mündliche Prüfung (P),seminaristischer Unterricht
+IBMAN-M23-F01,Fundamentals of Business Law,5,,Kombinierte Prüfung,seminaristischer Unterricht
+IBMAN-M03-F01,Marketing,5,,Klausur,seminaristischer Unterricht
+IBMAN-M11-F01,Operations Management,5,,Kombinierte Prüfung,seminaristischer Unterricht
+IBMAN-M27-F01,Statistics,5,,Klausur,seminaristischer Unterricht
+IBMAN-M25-F01,Work, Business and Society,5,,Kombinierte Prüfung,seminaristischer Unterricht
+IBMAN-M08-F01,International Management ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+IBMAN-M06-F01,Management Accounting and Controlling,5,,Klausur,seminaristischer Unterricht
+IBMAN-M09-F01,Organisational Behaviour in International Companies ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+IBMAN-M12-F01,Corporate Environmental Management,5,,Kombinierte Prüfung,seminaristischer Unterricht
+IBMAN-M29-F01,Business Applications,5,,Kombinierte Prüfung,seminaristischer Unterricht
+IBMAN-M05-F01,Principles of Managerial Accounting,5,,Klausur,seminaristischer Unterricht
+IBMAN-M21-F01,Macroeconomics: The Economic Cycle and Employment,5,,Kombinierte Prüfung,seminaristischer Unterricht
+IBMAN-M24-F01,Regional Studies ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+IBMAN-M02-F01,Principles of Corporate Finance,5,,Klausur,seminaristischer Unterricht
+IBMAN-M30-F01,Introduction to the Study Programme and the Academic Environment,2,,Leistungstest (undifferenziert),seminaristischer Unterricht
+IBMAN-M31-F01,Self Management ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+IBMAN-M04-F01,Principles of Financial Accounting,5,,Klausur,seminaristischer Unterricht
+IBMAN-M01-F01,Human Resources and Organisation,5,,Kombinierte Prüfung,seminaristischer Unterricht
+IBMAN-M26-F01,Mathematics for Business and Economics,5,,Klausur,seminaristischer Unterricht
+IBMAN-M20-F01,Microeconomics: Allocation and Distribution,5,,Klausur,seminaristischer Unterricht
+IBMAN-M28-F01,Digital Business,5,,Leistungstest (undifferenziert),seminaristischer Unterricht
+WiRecht-M39-F02...,English for Business Law: Common Law Cases,3,,Leistungstest (undifferenziert),seminaristischer Unterricht
+WiRecht-M39-F01...,English for Business Law: English Legal System,3,,Leistungstest (undifferenziert),seminaristischer Unterricht
+WiRecht-M09-F01...,Vertiefung Zivilrecht,3,,Klausur,Praktische Übung
+WiRecht-M41-F01...,Praxisseminar,1,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+WiRecht-M06-F02...,Recht im Unternehmen (Gesellschaftsrecht I),2,5,,Klausur,seminaristischer Unterricht
+WiRecht-M06-F01...,Recht im Unternehmen (Arbeitsrecht I),2,5,,Klausur,seminaristischer Unterricht
+WiRecht-M04-F01...,Zivilrecht III,5,,Kombinierte Prüfung,Seminar
+WiRecht-M05-F01...,Zivilrecht IV,5,,Hausarbeit,seminaristischer Unterricht
+WiRecht-M12-F01...,Wirtschaftsstrafrecht,5,,Klausur,seminaristischer Unterricht
+WiRecht-M23-F01...,Bank- und Kreditsicherungsrecht,5,,Klausur,seminaristischer Unterricht
+WiRecht-M08-F01...,Gesellschaftsrecht II,5,,Hausarbeit,seminaristischer Unterricht
+WiRecht-M21-F01...,Europäisches Wirtschaftsrecht,5,,Kombinierte Prüfung,seminaristischer Unterricht
+WiRecht-M07-F01...,Arbeitsrecht II,5,,Kombinierte Prüfung,seminaristischer Unterricht
+Wi-Inf-M16-F01,Recht der digitalen Wirtschaft,5,,Hausarbeit,Projektseminar, Action-learning
+WiRecht-M24-F01...,Praktische Anwendungen des Wirtschaftsrechts,5,,Kombinierte Prüfung,seminaristischer Unterricht
+WiRecht-M03-F01...,Zivilrecht II,5,,Hausarbeit,seminaristischer Unterricht
+WiRecht-M35-F01...,Statistik,5,,Klausur,seminaristischer Unterricht
+WiRecht-M11-F02...,Öffentliches Wirtschaftsrecht,5,,Klausur,seminaristischer Unterricht
+WiRecht-M01-F01...,Einführung in das Studium,2,,Leistungstest (undifferenziert),Projektseminar
+WiRecht-M34-F01...,Volkswirtschaftliche Rahmenbedingungen,5,,Klausur,Seminar
+WiRecht-M02-F01...,Zivilrecht I,5,,Klausur,seminaristischer Unterricht
+BA-WiIng-M32-F0...,Projektmanagement und Fallstudien,5,,Kombinierte Prüfung,seminaristischer Unterricht
+BA-WiIng-M33-F0...,Unternehmenssimulation mit Teamentwicklung und Supervision ,5,,Kombinierte Prüfung (undifferenziert),Übung
+BA-WiIng-M34-F0...,Strategische Finanzplanung und Bewertung,5,,Klausur,seminaristischer Unterricht
+BA-WiIng-M36-F0...,Nachhaltiges Operations Management II,5,,Kombinierte Prüfung,seminaristischer Unterricht
+BA-WiIng-M37-F0...,Analyse unternehmerischer Nachhaltigkeit,5,,Klausur,seminaristischer Unterricht
+BA-WiIng-M21-F0...,Statistik,5,,Klausur,seminaristischer Unterricht
+BA-WiIng-M22-F0...,Investition und Finanzierung,5,,Klausur,seminaristischer Unterricht
+BA-WiIng-M07-F0...,Business English II,0,,Kombinierte Prüfung,Übung
+BA-WiIng-M07-F0...,Business English III,0,,Kombinierte Prüfung,Übung
+BA-WiIng-M08-F0...,Einführung in die Umweltökonomie und nachhaltige Entwicklung,5,,Klausur,seminaristischer Unterricht
+BA-WiIng-M09-F0...,Marketing,5,,Klausur,seminaristischer Unterricht
+Wi-Inf-M12-F01,Sicherheit in der Informationstechnologie,5,,Kombinierte Prüfung,seminaristischer Unterricht
+Wi-Inf-M37-F01,Praxisseminar,1,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+Wi-Inf-M17-F01,Unternehmenssoftware für KMU,5,,Kombinierte Prüfung,Übung am PC
+Wi-Inf-M14-F01,IT Governance und IT Service Management,5,,Klausur,Praktische Übung
+Wi-Inf-M10-F01,Projekt Software Engineering,10,,Projektdokumentation,Projektseminar, Action-learning
+Wi-Inf-M28-F01,Volkswirtschaftliche Rahmenbedingungen,5,,Klausur,seminaristischer Unterricht
+Wi-Inf-M04-F01,Datenbanken,10,,Klausur,seminaristischer Unterricht
+Wi-Inf-M31-F01,Statistik,5,,Klausur,seminaristischer Unterricht
+Wi-Inf-M08-F01,App Entwicklung mit Android,5,,Kombinierte Prüfung,seminaristischer Unterricht
+Wi-Inf-M11-F01,Unternehmensmodellierung,5,,Klausur,seminaristischer Unterricht
+Wi-Inf-M15-F01,Aktuelle Fragen der Wirtschaftsinformatik,5,,Kombinierte Prüfung,Projektseminar, Action-learning
+Wi-Inf-M18-F01,E-Business und digitale Geschäftsmodelle,5,,Kombinierte Prüfung,Übung am PC
+Wi-Inf-M35-F01,Projektmanagement,5,,Kombinierte Prüfung (undifferenziert),seminaristischer Unterricht
+Wi-Inf-M13-F01,Informations- und Kommunikationsmanagement ,5,,Kombinierte Prüfung,Praktische Übung
+Wi-Inf-M09-F02,Full-Stack Web Development,5,,Programmentwurf,Übung am PC
+Wi-Inf-M19-F02,Introduction to Data Analytics,5,,Kombinierte Prüfung,Übung am PC
+Wi-Inf-M33-F01,English 2- English for Information Technology Part 2 ,3,,Leistungstest (undifferenziert),Praktische Übung
+Wi-Inf-M03-F01,Betriebliche Informationssysteme,5,,Kombinierte Prüfung,seminaristischer Unterricht
+Wi-Inf-M06-F01,Objektorientierte Programmierung II ,5,,Kombinierte Prüfung,Übung am PC
+Wi-Inf-M01-F01,Einführung in das Studium der Wirtschaftsinformatik ,1,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+Wi-Inf-M32-F01,English 1- English for Information Technology Part 1 ,3,,Leistungstest (undifferenziert),Praktische Übung
+Wi-Inf-M27-F01,Sozialwissenschaftliche Aspekte der Informations- und Wissensgesellschaft,5,,Kombinierte Prüfung,seminaristischer Unterricht
+Wi-Inf-M05-F01,Objektorientierte Programmierung I ,5,,Kombinierte Prüfung,Übung am PC
+Wi-Inf-M02-F01,Grundlagen der Wirtschaftsinformatik ,5,,Kombinierte Prüfung,Übung am PC
+Wi-Inf-M20-F01,Optimierung und Simulation ,5,,Kombinierte Prüfung,Projektseminar, Action-learning
+BA-Eco-M43-F01,Praxisseminar,1,,Referat (undifferenziert),Projektseminar, Action-learning
+BA-Eco-M35-F01,Statistik II ,5,,Klausur,seminaristischer Unterricht
+BA-Eco-M34-F01,Statistik I,5,,Klausur,seminaristischer Unterricht
+BA-Eco-M33-F01,Wirtschaftsmathematik,5,,Klausur,Seminar
+BA-Eco-M17-F01,Verhaltensökonomik ,5,,Kombinierte Prüfung,seminaristischer Unterricht
+BA-Eco-M13-F01,Europäische Wirtschaftspolitik ,5,,Kombinierte Prüfung,Projektseminar, Action-learning
+BA-Eco-M10-F01,Theorie der Wirtschaftspolitik,5,,Kombinierte Prüfung,seminaristischer Unterricht
+BA-Eco-M08-F01,Angewandte Mikroökonomie,5,,Klausur,seminaristischer Unterricht
+BA-Eco-M07-F01,Nationale und internationale Finanzbeziehungen ,5,,Hausarbeit,seminaristischer Unterricht
+BA-Eco-M06-F01,Empirische Wirtschaftsforschung und Grundlagen der Ökonometrie ,5,,Klausur,seminaristischer Unterricht
+BA-Eco-M04-F01,Mikroökonomie II,5,,Klausur,seminaristischer Unterricht
+BA-Eco-M01-F01,Einführung in das Volkswirtschaftsstudium,2,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+CAF-MM-F06,Welcome to the machine: KI-Tools für jeden Schritt im Marketing,5,,Kombinierte Prüfung,Seminar
+BA-BUS-M11-F01,Unternehmenssimulation und Teamentwicklung ,5,,Leistungstest (undifferenziert),Praktische Übung
+BUS-MSQ-F01,Selbstmanagement ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BUS-MSQ-F02,Kommunikation und Präsentation ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BUS-MSQ-F04,Tabellenkalkulation für Entscheidungen in der Wirtschaft (Excel) ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BUS-MSQ-F03,Agiles Projektmanagement ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BUS-MSQ-F05,Gesprächsführung ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BUS-MSQ-F06,Interkulturelle Kompetenz ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BUS-MSQ-F07,Improve-Präsentationstraining/ Improvisationstheater ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BUS-MSQ-F08,Design Thinking ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BUS-MSQ-F09,Grundlagen der Digitalisierung ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BUS-MSQ-F10,Visual Thinking for Business ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BUS-MSQ-F11,International Project Management ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+BUS-MSQ-F12,Generative AI ,3,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+CAF-MBS-F02,Ausgewählte Fragen der Unternehmensbesteuerung,5,,Kombinierte Prüfung,seminaristischer Unterricht
+BA-Eco-M14-F01,Märkte, Wettbewerb und Regulierung,5,,Klausur,seminaristischer Unterricht
+BA-BUS-MSQ-F07,Improve-Präsentationstraining/ Improvisationstheater,2,5,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+IBMAN-MI-F13,Management Issues: Project Management,5,,Kombinierte Prüfung,seminaristischer Unterricht
+IBMAN-MI-F09,Management Issues: Entrepreneurship,5,,Kombinierte Prüfung,seminaristischer Unterricht
+MPE-M01-F23,Strategic Responsible Transformation,6,5,,Kombinierte Prüfung,seminaristischer Unterricht
+CAF-MSCOM-F08,Nachhaltige Planung und Optimierung logistischer Systeme im Supply Chain Management,5,,Kombinierte Prüfung,seminaristischer Unterricht
+BA-ISUM-M11-F01,Sustainable Operations Management II,5,,Klausur,seminaristischer Lehrvortrag
+BA-ISUM-M14-F01,Integrated Sustainability Reporting,5,,Kombinierte Prüfung,seminaristischer Lehrvortrag
+BA-ISUM-M17-F01,Statistics & Applications in Data Science,5,,Klausur,seminaristischer Lehrvortrag
+BA-ISUM-M22-F01,Entrepreneurial Project III,10,,Portfolio,seminaristischer Lehrvortrag
+BA-ISUM-M24-F01,Storytelling for Business & Business Ethics,5,,Kombinierte Prüfung,Übung
+BA-ISUM-M09-F01,Sustainability Marketing,5,,Kombinierte Prüfung,seminaristischer Lehrvortrag
+BA-ISUM-M23-F01,Academic Writing & Managing Complexity ,5,,Kombinierte Prüfung,Übung
+BA-ISUM-M21-F04,Entrepreneurial Project II,5,,Portfolio,Projektseminar, Action-learning
+WiRecht-M39-F02,English for Business Law: Common Law Cases,3,,Leistungstest (undifferenziert),seminaristischer Unterricht
+WiRecht-M39-F01,English for Business Law: English Legal System,3,,Leistungstest (undifferenziert),seminaristischer Unterricht
+WiRecht-M09-F01,Vertiefung Zivilrecht,3,,Klausur,Praktische Übung
+WiRecht-M41-F01,Praxisseminar,1,,Leistungstest (undifferenziert),Projektseminar, Action-learning
+WiRecht-M06-F02,Recht im Unternehmen (Gesellschaftsrecht I),2,5,,Klausur,seminaristischer Unterricht
+WiRecht-M06-F01,Recht im Unternehmen (Arbeitsrecht I),2,5,,Klausur,seminaristischer Unterricht
+WiRecht-M04-F01,Zivilrecht III,5,,Kombinierte Prüfung,Seminar
+WiRecht-M05-F01,Zivilrecht IV,5,,Hausarbeit,seminaristischer Unterricht
+WiRecht-M12-F01,Wirtschaftsstrafrecht,5,,Klausur,seminaristischer Unterricht
+WiRecht-M23-F01,Bank- und Kreditsicherungsrecht,5,,Klausur,seminaristischer Unterricht
+WiRecht-M08-F01,Gesellschaftsrecht II,5,,Hausarbeit,seminaristischer Unterricht
+WiRecht-M21-F01,Europäisches Wirtschaftsrecht,5,,Kombinierte Prüfung,seminaristischer Unterricht
+WiRecht-M07-F01,Arbeitsrecht II,5,,Kombinierte Prüfung,seminaristischer Unterricht
+WiRecht-M24-F01,Praktische Anwendungen des Wirtschaftsrechts,5,,Kombinierte Prüfung,seminaristischer Unterricht
+WiRecht-M03-F01,Zivilrecht II,5,,Hausarbeit,seminaristischer Unterricht
+WiRecht-M35-F01,Statistik,5,,Klausur,seminaristischer Unterricht
+WiRecht-M11-F02,Öffentliches Wirtschaftsrecht,5,,Klausur,seminaristischer Unterricht
+WiRecht-M01-F01,Einführung in das Studium,2,,Leistungstest (undifferenziert),Projektseminar
+WiRecht-M34-F01,Volkswirtschaftliche Rahmenbedingungen,5,,Klausur,Seminar
+WiRecht-M02-F01,Zivilrecht I,5,,Klausur,seminaristischer Unterricht
+BA-WiIng-M32-F01,Projektmanagement und Fallstudien,5,,Kombinierte Prüfung,seminaristischer Unterricht
+BA-WiIng-M33-F01,Unternehmenssimulation mit Teamentwicklung und Supervision ,5,,Kombinierte Prüfung (undifferenziert),Übung
+BA-WiIng-M34-F01,Strategische Finanzplanung und Bewertung,5,,Klausur,seminaristischer Unterricht
+BA-WiIng-M36-F01,Nachhaltiges Operations Management II,5,,Kombinierte Prüfung,seminaristischer Unterricht
+BA-WiIng-M37-F01,Analyse unternehmerischer Nachhaltigkeit,5,,Klausur,seminaristischer Unterricht
+BA-WiIng-M21-F01,Statistik,5,,Klausur,seminaristischer Unterricht
+BA-WiIng-M22-F01,Investition und Finanzierung,5,,Klausur,seminaristischer Unterricht
+BA-WiIng-M07-F02,Business English II,0,,Kombinierte Prüfung,Übung
+BA-WiIng-M07-F03,Business English III,0,,Kombinierte Prüfung,Übung
+BA-WiIng-M08-F01,Einführung in die Umweltökonomie und nachhaltige Entwicklung,5,,Klausur,seminaristischer Unterricht
+BA-WiIng-M09-F01,Marketing,5,,Klausur,seminaristischer Unterricht
