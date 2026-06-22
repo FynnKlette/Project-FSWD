@@ -23,7 +23,7 @@ app.config["SECRET_KEY"] = "schlüssel"
 
 class RegisterForm(FlaskForm):
     username = StringField("Username", validators=[DataRequired(), Length(min=3, max=15),
-    Regexp(r'^[A-Za-z\d]+$', message="Der Username darf nur Buchstaben enthalten")])
+    Regexp(r'^[A-Za-z\d]+$', message="Der Username darf nur Buchstaben und Zahlen enthalten")])
 
     password = PasswordField("Password", validators=[DataRequired(), Length(min=8, max=20),
     Regexp( #.*? = suche vom Anfang bis zum Ende nach einem Muster, das die folgenden Bedingungen erfüllt
