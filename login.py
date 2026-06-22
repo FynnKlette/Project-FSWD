@@ -14,8 +14,7 @@ def login_seite():
 
 #os für Dateipfade
 skript_ordner = os.path.dirname(os.path.abspath(__file__))
-db_path = os.path.dirname(skript_ordner)
-path = os.path.join(db_path, "tauschdaten.db")
+path = os.path.join(skript_ordner, "tauschdaten.db")
 
 #Sicherheitsmaßnahme
 app.config["SECRET_KEY"] = "schlüssel"
@@ -147,7 +146,7 @@ def anmelden():
             
             #verschlüsseltes Passwort wird übersetzt
             if isinstance(db_passwort_hash, str):
-                db_passwort_hash.encode('utf-8')
+                db_passwort_hash=db_passwort_hash.encode('utf-8')
             
 
             if not bcrypt.checkpw(a_passwort.encode('utf-8'), db_passwort_hash):
@@ -184,7 +183,7 @@ def s_anmelden():
         db_email = mitarbeiter[3]
         
         if isinstance(mh_passwort, str):
-            mh_passwort.encode('utf-8')
+            mh_passwort=mh_passwort.encode('utf-8')
 
          # index 4= Spalte 5 in db
         if not bcrypt.checkpw(m_passwort.encode('utf-8'), mh_passwort):
