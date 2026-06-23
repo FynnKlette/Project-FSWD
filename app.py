@@ -78,6 +78,9 @@ def dashboard():
     else:
         return "Fehler beim Account!"
     
+@app.route("/impressum", methods=["GET"])
+def impressum():
+    return render_template("impress.html")
 
 # @app.route("/verwaltung")
 # @login_required
