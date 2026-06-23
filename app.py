@@ -25,6 +25,8 @@ class User(UserMixin):
 #user erkennen
 @login_manager.user_loader
 def load_user(user_id):
+    if not user_id:
+        return None
     return User(user_id)
 
 

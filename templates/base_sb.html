@@ -1,0 +1,40 @@
+ <!doctype html>
+<html lang=en>
+
+<head>
+    <title>{% block TITLE %}{% endblock %} Tauschtool (Studienbüro)</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+    
+</head>
+
+<body>
+
+<section class="content">
+        <header>{% block HEADER %}
+        <a href="/verwaltung"><img src="{{ url_for('static', filename='hwr-baer.png') }}" alt="Home" width="50"></a>
+        <a href="/verwaltung">HWR-Kurstausch<br>Studienbüro</a>
+        <a href="/show">Logout</a>
+        {% endblock %}</header>
+
+        <nav>{% block NAV %}
+    <h1>HWR-Kurstausch</h1>
+    <h2>FB 1 Bachelor Sc.<br>Studienbüro</h2>
+    <ul>
+        <li><a href="/verwaltung">Home</a></li>
+        
+        <li><a href="/profil">Profil</a></li>
+    </ul>
+    {% endblock %}</nav>
+
+    {% block CONTENT %}{% endblock %}
+
+    <footer>{% block footer %}
+        <p>HWR Kurstausch-Portal</p>
+        <p>&copy; 2026 ASDF Dev.</p>
+        <p><a href="/studienburo/impress">Impressum</a></p>
+        {% endblock %}</footer>
+</section>
+</body>
+
+</html>
