@@ -12,19 +12,19 @@
 
 <section class="content">
         <header>{% block HEADER %}
-        <a href="/dashboard"><img src="{{ url_for('static', filename='hwr-baer.png') }}" alt="Home" width="50">HWR-Kurstausch</a>
+        <a href="/dashboard"><img src="{{ url_for('static', filename='hwr-baer.png') }}" alt="Home" width="50"></a>
+        <div style="margin: auto;">
+        <b style="font-size: 20px; color:white;">HWR-Kurstausch - FB 1 Bachelor Sc.</b>
+        </div>
+        <a href="/dashboard">Home</a>
+        <a href="/liste">Kursabgabe</a>
+        <a href="/anfrage_liste">Kursanfrage</a>
+        <a href="/profil">Profil</a>
         <a href="/show">Logout</a>
         {% endblock %}</header>
 
         <nav>{% block NAV %}
-    <h1>HWR-Kurstausch</h1>
-    <h2>FB 1 Bachelor Sc.</h2>
-    <ul>
-        <li><a href="/dashboard">Home</a></li>
-        <li><a href="/liste">Kursabgabe</a></li>
-        <li><a href="/anfrage_liste">Kursanfrage</a></li>
-        <li><a href="/profil">Profil</a></li>
-    </ul>
+    
     {% endblock %}</nav>
 
     {% block CONTENT %}{% endblock %}
