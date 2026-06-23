@@ -1,12 +1,9 @@
 {% extends "base_sb.html" %}
-<!DOCTYPE html>
-<html>
-    <head>
-    <title>csv upload form</title>
-    </head>
-    <body>
+{% block TITLE %}CSV UPLOAD{% endblock %}
+{% block CONTENT %}
+
     <div>
-        <h2>Csv Datei hier hochladen</h2>
+        <h2>csv Datei hier hochladen</h2>
         <p>Achtung, die Daten in der CSV ersetzen die Kurse in der Datenbank!</p>
         <p>Achtung, die erste Spalte in der CSV wird als Bezeichnung gedeutet und nicht in die DB eingepflegt!</p>
     </div>
@@ -18,5 +15,4 @@
         {{ form.submit()}}
         </form>
     </div>
-    </body>
-</html>
+{% endblock %}
