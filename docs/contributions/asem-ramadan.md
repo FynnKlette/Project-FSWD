@@ -59,18 +59,17 @@ Mir ist weiterhin bewusst, dass ich, sofern ich zur Erstellung dieser Arbeit KI-
 * [DD-05: Waiting List Principle (FIFO)](../design-decisions/dd-asem-01-wartelistenprinzip.md)
 * [DD-06: Duplicate Protection](../design-decisions/dd-asem-02-duplikatschutz.md)
 
-## Contributions
-
+##Contributions
 | Contribution | Proof, e.g., git commits | Sources used |
 |---|---|---|
-| Implemented `/abgaben` route with JOIN | PR #1, #2 | Flask Documentation, SQLite Docs |
-| WTForms form for new submissions, POST + INSERT | PR #3 | Flask-WTF Documentation |
-| PRG pattern with flash messages and ORDER BY zeitpunkt ASC | PR #3 | Flask Documentation |
-| Mirrored logic for course requests (`/anfragen`) | PR #4 | — |
-| User validation + duplicate protection | PR #4 | — |
-| Styled flash messages (green/red) | PR #4 | — |
-| Refactored module to team structure | PR #4 | — |
-
+| Kursabgabe Module — Flask App, erste Route GET /abgaben | [e09b13a](https://github.com/FynnKlette/Project-FSWD/commit/80f4fa1) | Flask Docs |
+| Kursabgabe — SQLite DB-Verbindung für Abgaben | [5068c37](https://github.com/FynnKlette/Project-FSWD/commit/5068c37) | Flask Docs, SQLite Docs |
+| Kursabgabe — WTForms Formular, Template, Route /abgaben/neu | [d431d0d](https://github.com/FynnKlette/Project-FSWD/commit/d431d0d), [f0f988d](https://github.com/FynnKlette/Project-FSWD/commit/f0f988d) | WTForms Docs |
+| Kursabgabe — POST/INSERT, PRG Pattern, Flash, Wartelisten-Sortierung | [7e717dd](https://github.com/FynnKlette/Project-FSWD/commit/7e717dd), [a1fe6cc](https://github.com/FynnKlette/Project-FSWD/commit/a1fe6cc) | WTForms Docs, Flask Docs |
+| Anfragen-Modul — AnfrageForm, Routes, Templates | [f461d7f](https://github.com/FynnKlette/Project-FSWD/commit/f461d7f) | WTForms Docs |
+| Username-Validierung (studenten-Tabelle) + Duplikat-Prävention | [4b0ba39](https://github.com/FynnKlette/Project-FSWD/commit/4b0ba39) | SQLite Docs |
+| Styled Flash Messages (grün/rot) | [5bea390](https://github.com/FynnKlette/Project-FSWD/commit/5bea390) | W3Schools |
+| Repo-Struktur: Templates + kursabgabe.py in Root (Merge mit main) | [e09b13a](https://github.com/FynnKlette/Project-FSWD/commit/e09b13a) | – |
 ## AI Directory
 
 | # | AI Tool | Purpose of Use | Affected Sections (Code + Docs) | Remarks, Procedure, Prompts |
