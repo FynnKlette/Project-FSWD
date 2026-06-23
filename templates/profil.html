@@ -1,4 +1,18 @@
 {% extends "base.html" %}
+{% block title %}profile seite{% endblock %}
 {% block CONTENT %}
-<h1>test 123</h1>
+<h1>Profildaten</h1>
+
+<p>Vorname: {{ current_user.vorname }}</p>
+<p>Name: {{ current_user.name }}</p>
+<p>Email: {{ current_user.email }}</p>
+
+    {% if current_user.matrikelnummer%}
+    <p>Matrikelnummer: {{ current_user.matrikelnummer }}</p>
+    {%endif%}
+
+    {% if current_user.ma_id%}
+    <p>Studienbüro Account ID: {{ current_user.ma_id }}</p>
+    {%endif%}
+
 {% endblock %}

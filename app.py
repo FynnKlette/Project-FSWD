@@ -19,8 +19,16 @@ login_manager.init_app(app)
 login_manager.login_view = "login_blueprint.login_seite" # Umleitung, falls nicht eingelogt
 
 class User(UserMixin):
-    def __init__(self,id):
+    # manche =None weil User auf student und studienburo acc sich bezieht weil studienburo acc hat diese daten nicht
+    def __init__(self,id,vorname, name, email, username=None, matrikelnummer=None, studiengang=None, ma_id=None):
         self.id=id
+        self.vorname=vorname
+        self.name=name
+        self.email=email
+        self.username=username
+        self.matrikelnummer=matrikelnummer
+        self.studiengang=studiengang
+        self.ma_id=ma_id
 
 
 #user erkennen
@@ -28,8 +36,33 @@ class User(UserMixin):
 def load_user(user_id):
     if not user_id:
         return None
-    return User(user_id)
+    with dbcon() as connection:
+        c = connection.cursor()
+        c.execute("SELECT username, vorname, name, email, matrikelnummer, studiengang FROM studenten WHERE username = ?", (user_id,))
+        student = c.fetchone()
+        print(student)
+        if student:
+            return User(
+                id=str(student[0]), # wird von flask-login gebraucht
+                username=student[0],
+                vorname=student[1],
+                name=student[2],
+                email=student[3],
+                matrikelnummer=student[4],
+                studiengang=student[5]
+            )
 
+        c.execute("SELECT ma_id, vorname, name, email FROM studienbüro_ma WHERE ma_id = ?", (user_id,))
+        studienburo_acc = c.fetchone()
+        print(studienburo_acc)
+        if studienburo_acc:
+            return User(
+                id=str(studienburo_acc[0]), # wird von flask-login gebraucht
+                ma_id=studienburo_acc[0],
+                vorname=studienburo_acc[1],
+                name=studienburo_acc[2],
+                email=studienburo_acc[3]
+            )
 
 
 @app.route("/dashboard", methods=["GET", "POST"])
@@ -38,13 +71,18 @@ def dashboard():
     return render_template("dashboard.html")
 
 
-@app.route("/verwaltung")
+# @app.route("/verwaltung")
+# @login_required
+# def verwaltung():
+#     if "mitarbeiter" not in session:
+#         flash ("Zugriff verweigert", "zugriff_nichtig")
+#         return render_template("show.html")
+#     return render_template("verwaltung.html")
+
+@app.route("/profil")
 @login_required
-def verwaltung():
-    if "mitarbeiter" not in session:
-        flash ("Zugriff verweigert", "zugriff_nichtig")
-        return render_template("show.html")
-    return render_template("verwaltung.html")
+def profil():
+    return render_template("profil.html")
 
 
 # muss im app module sein sonnst klappt upload nicht!

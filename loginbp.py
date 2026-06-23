@@ -161,14 +161,20 @@ def anmelden():
                 session.clear()
                 session["user"] = student[0] # Username in der Session speichern!
                 from app import User
-                user_obj = User(student[0])
+                user_obj = User(id=str(student[0]), # wird von flask-login gebraucht
+                    username=student[0],
+                    vorname=student[1],
+                    name=student[2],
+                    email=student[3],
+                    matrikelnummer=student[4],
+                    studiengang=student[5])
                 login_user(user_obj)
 
                 return redirect(url_for("dashboard")) # Weiterleitung zum Dashboard!
                 #open start application()
             
     # falls es nicht klappt, dann wird die Startseite neu geladen
-    return render_template("show.html")
+    return render_template("login.html")
 
 
 
@@ -208,7 +214,11 @@ def s_anmelden():
           session.clear()
           session["mitarbeiter"] = mitarbeiter[0] # In Session merken
           from app import User
-          user_obj = User(mitarbeiter[0])
+          user_obj = User(id=str(mitarbeiter[0]), # wird von flask-login gebraucht
+                ma_id=mitarbeiter[0],
+                vorname=mitarbeiter[1],
+                name=mitarbeiter[2],
+                email=mitarbeiter[3])
           login_user(user_obj)
 
           return redirect(url_for("verwaltung"))

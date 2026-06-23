@@ -4,6 +4,7 @@ from flask_wtf import FlaskForm
 from flask_wtf.file import *
 from wtforms import *
 from db_update import *
+from studburo_req import studienburo_required
 
 DB_PATH = 'tauschdaten.db'
 
@@ -38,13 +39,16 @@ def alle_tausche():
     return alle_tausche
 
 @studienburo.route("/kurse", methods=['Get'])
+@studienburo_required
 def kurse():
     return render_template("kurse.html", kurse=alle_kurse())
 
 @studienburo.route("/module", methods=['Get'])
+@studienburo_required
 def module():
     return render_template("module.html", module=alle_module())
 
 @studienburo.route("/tauschverwaltung", methods=['Get'])
+@studienburo_required
 def tausche():
     return render_template("tauschverwaltung.html", tausche=alle_tausche())
