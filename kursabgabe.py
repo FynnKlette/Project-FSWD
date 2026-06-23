@@ -3,6 +3,7 @@ from flask import Flask, render_template, redirect, url_for, flash, Blueprint
 from flask_wtf import FlaskForm
 from wtforms import SelectField, StringField, SubmitField
 from wtforms.validators import DataRequired
+from flask_login import current_user
 
 kursabgabe = Blueprint("kursabgabe", __name__)
 
@@ -15,7 +16,6 @@ class AbgabeForm(FlaskForm):
         coerce=int,
         validators=[DataRequired()]
     )
-    username = StringField("Username", validators=[DataRequired()])
     submit = SubmitField("Abgabe speichern")
 
 
@@ -26,7 +26,6 @@ class AnfrageForm(FlaskForm):
         coerce=int,
         validators=[DataRequired()]
     )
-    username = StringField("Username", validators=[DataRequired()])
     submit = SubmitField("Anfrage speichern")
 
 
@@ -57,39 +56,40 @@ def abgabe_neu():
     form.kurs.choices = kurse
 
     if form.validate_on_submit():
+        current_username = current_user.username
         # Prüfen, ob der Username in der studenten-Tabelle existiert
         cursor.execute(
             "SELECT username FROM studenten WHERE username = ?",
-            (form.username.data,)
+            (current_username,)
         )
         student = cursor.fetchone()
 
         if student is None:
             conn.close()
             flash("Username existiert nicht. Bitte zuerst registrieren!", "error")
-            return redirect(url_for("abgabe_neu"))
+            return redirect(url_for("kursabgabe.abgabe_neu"))
 
         # Prüfen, ob dieser User für diesen Kurs schon eine Abgabe hat
         cursor.execute(
             "SELECT abgabe_id FROM abgabe WHERE username = ? AND kurs_id = ?",
-            (form.username.data, form.kurs.data)
+            (current_username, form.kurs.data)
         )
         existierende_abgabe = cursor.fetchone()
 
         if existierende_abgabe is not None:
             conn.close()
             flash("Du hast diesen Kurs bereits zur Abgabe eingestellt!", "error")
-            return redirect(url_for("abgabe_neu"))
+            return redirect(url_for("kursabgabe.abgabe_neu"))
 
         # Alles OK → Abgabe speichern
         cursor.execute(
             "INSERT INTO abgabe (kurs_id, username) VALUES (?, ?)",
-            (form.kurs.data, form.username.data)
+            (form.kurs.data, current_username)
         )
         conn.commit()
         conn.close()
         flash("Abgabe erfolgreich gespeichert!", "success")
-        return redirect(url_for("abgaben_liste"))
+        return redirect(url_for("kursabgabe.abgaben_liste"))
 
     conn.close()
     return render_template("form.html", form=form)
@@ -122,39 +122,40 @@ def anfrage_neu():
     form.kurs.choices = kurse
 
     if form.validate_on_submit():
+        current_username = current_user.username
         # Prüfen, ob der Username existiert
         cursor.execute(
             "SELECT username FROM studenten WHERE username = ?",
-            (form.username.data,)
+            (current_username,)
         )
         student = cursor.fetchone()
 
         if student is None:
             conn.close()
             flash("Username existiert nicht. Bitte zuerst registrieren!", "error")
-            return redirect(url_for("anfrage_neu"))
+            return redirect(url_for("kursabgabe.anfrage_neu"))
 
         # Prüfen, ob dieser User für diesen Kurs schon eine Anfrage hat
         cursor.execute(
             "SELECT anfrage_id FROM anfrage WHERE username = ? AND kurs_id = ?",
-            (form.username.data, form.kurs.data)
+            (current_username, form.kurs.data)
         )
         existierende_anfrage = cursor.fetchone()
 
         if existierende_anfrage is not None:
             conn.close()
             flash("Du hast diesen Kurs bereits angefragt!", "error")
-            return redirect(url_for("anfrage_neu"))
+            return redirect(url_for("kursabgabe.anfrage_neu"))
 
         # Alles OK → Anfrage speichern
         cursor.execute(
             "INSERT INTO anfrage (kurs_id, username) VALUES (?, ?)",
-            (form.kurs.data, form.username.data)
+            (form.kurs.data, current_username)
         )
         conn.commit()
         conn.close()
         flash("Anfrage erfolgreich gespeichert!", "success")
-        return redirect(url_for("anfragen_liste"))
+        return redirect(url_for("kursabgabe.anfragen_liste"))
 
     conn.close()
     return render_template("anfrage_form.html", form=form)
