@@ -46,7 +46,7 @@ with sqlite3.connect(db_path) as conn:
 
 
 
-    passwortnr3= "hallo".encode('utf-8')
+    passwortnr4= "hallo".encode('utf-8')
     hashdp2= bcrypt.hashpw(passwortnr3, bcrypt.gensalt())
      
     cursor.execute("""  
