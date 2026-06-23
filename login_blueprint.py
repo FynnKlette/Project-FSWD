@@ -157,7 +157,7 @@ def anmelden():
                 flash("Das Passwort ist falsch.", "danger")
             else:
                 session["user"] = student[0] # Username in der Session speichern!
-                return redirect(url_for("startapp")) # Weiterleitung zum Dashboard!
+                return redirect(url_for("dashboard")) # Weiterleitung zum Dashboard!
                 #open start application()
             
     # falls es nicht klappt, dann wird die Startseite neu geladen

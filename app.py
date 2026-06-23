@@ -14,7 +14,7 @@ app.config["SECRET_KEY"] = "schlüssel"
 DB_PATH = 'tauschdaten.db'
 
 @app.route("/dashboard", methods=["GET", "POST"])
-def startapp():
+def dashboard():
     return render_template("dashboard.html")
 
 

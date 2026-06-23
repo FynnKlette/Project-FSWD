@@ -3,32 +3,35 @@
 
 <head>
     <title>{% block TITLE %}{% endblock %} Tauschtool</title>
+    
 </head>
 
 <body>
-    {% block HEADER %}
-      <a href="{{ url_for('dashboard') }}">Dashboard</a>
-      <a href="{{ url_for('logout') }}">Logout</a>
-    {% endblock %}
-  </nav>
-</header>
 
+<section class="content">
+        <header>{% block HEADER %}
+        <a href="/dashboard">Dashboard</a>
+        <a href="/show">Logout</a>
+        {% endblock %}</header>
 
+        <nav>{% block NAV %}
     <h1>HWR-Kurstausch</h1>
     <h2>FB 1 Bachelor Sc.</h2>
-    
-    {% block NAV %}
     <ul>
         <li><a href="/dashboard">Home</a></li>
         <li><a href="/liste">Kursabgabe</a></li>
         <li><a href="/anfrage_liste">Kursanfrage</a></li>
         <li><a href="/profil">Profil</a></li>
     </ul>
-    {% endblock %}
+    {% endblock %}</nav>
 
-<section class="content">
-    <header>{% block HEADER %}{% endblock %}</header>
     {% block CONTENT %}{% endblock %}
+
+    <footer>{% block footer %}
+        <p>HWR Kurstausch-Portal</p>
+        <p>&copy; 2026 ASDF Dev.</p>
+        <p><a href="/impress">Impressum</a></p>
+        {% endblock %}</footer>
 </section>
 </body>
 
