@@ -3,8 +3,10 @@ from flask import current_app, abort
 from flask import request
 from flask import session
 from flask_login import current_user
-from .config import EXEMPT_METHODS
 from csv_upload import dbcon
+from flask_login import login_required
+
+EXEMPT_METHODS = {"OPTIONS"}
 
 def studienburo_required(func):
 
