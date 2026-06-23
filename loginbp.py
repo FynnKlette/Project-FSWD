@@ -4,6 +4,8 @@ from wtforms import StringField, PasswordField, SubmitField, SelectField
 from wtforms.validators import DataRequired, Length, Regexp, EqualTo
 import sqlite3, os
 import bcrypt 
+from flask_login import login_user, logout_user
+
 
 
 login_blueprint= Blueprint('login_blueprint',__name__)
@@ -143,7 +145,7 @@ def anmelden():
             student = cursor.fetchone()
 
     if student is None:
-            flash("Den Account nicht gefunden, bitte nochmal versuchen", "danger")
+            flash("Der Account wurde nicht gefunden, bitte nochmal versuchen", "danger")
     else:
             # Index 5, weil sich in der Tabelle Student, das Passwordt in der 6. Spalte befindet
             db_passwort_hash = student[5] 
@@ -156,7 +158,12 @@ def anmelden():
             if not bcrypt.checkpw(a_passwort.encode('utf-8'), db_passwort_hash):
                 flash("Das Passwort ist falsch.", "danger")
             else:
+                session.clear()
                 session["user"] = student[0] # Username in der Session speichern!
+                from app import User
+                user_obj = User(student[0])
+                login_user(user_obj)
+
                 return redirect(url_for("dashboard")) # Weiterleitung zum Dashboard!
                 #open start application()
             
@@ -198,7 +205,12 @@ def s_anmelden():
         elif m_email != db_email:
                 flash("Die Email ist falsch.", "s_danger")
         else: 
+          session.clear()
           session["mitarbeiter"] = mitarbeiter[0] # In Session merken
+          from app import User
+          user_obj = User(mitarbeiter[0])
+          login_user(user_obj)
+
           return redirect(url_for("verwaltung"))
          
 # Seite neu laden falls die Angaben falsch sind
@@ -207,6 +219,12 @@ def s_anmelden():
 
 
 
+@login_blueprint.route("/logout")
+def logout ():
+    logout_user()
+    session.clear()
+    flash("Erfolgreich abgemeldet", "logout_success")
+    return redirect(url_for(".login_seite"))
 
 @login_blueprint.route("/studienbuero")
 def studbuero():
