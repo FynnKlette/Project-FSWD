@@ -74,11 +74,7 @@ def internal_server_error(e):
     return render_template('500.html'), 500
 
 @app.errorhandler(401)
-<<<<<<< HEAD
-def not_autophrized(e):
-=======
 def unauthorized_error(e):
->>>>>>> fac2e72c48960322e7d37d2c177a3cce79153c4f
     return render_template('401.html'), 401
 
 if __name__ == "__main__":
