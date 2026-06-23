@@ -1,3 +1,7 @@
+{% extends "base_sb.html" %}
+{% block TITLE %}Alle Module -{% endblock %}
+{% block CONTENT %}
+
 <h2> Hier kannst du die Module ansehen! Anzahl aller Module in DB: {{ module|length }}</h2>
 <div>
     {% if module|length > 0 %}
@@ -31,3 +35,5 @@
     <p> Ein Fehler ist aufgetretten! </p>
     {% endif %}
 </div>
+
+{% endblock %}

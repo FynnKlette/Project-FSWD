@@ -1,14 +1,16 @@
 from flask import *
-from flask_login import login_required, UserMixin, LoginManager
+from flask_login import login_required, UserMixin, LoginManager, current_user
 from studienburo import studienburo
 from db_update import *
 from studienburo import *
 from loginbp import login_blueprint
 from studburo_req import studienburo_required
+from kursabgabe import kursabgabe
 
 app = Flask(__name__)
 app.register_blueprint(studienburo)
 app.register_blueprint(login_blueprint)
+app.register_blueprint(kursabgabe)
 app.config["SECRET_KEY"] = "schlüssel"
 
 DB_PATH = 'tauschdaten.db'
@@ -40,7 +42,7 @@ def load_user(user_id):
         c = connection.cursor()
         c.execute("SELECT username, vorname, name, email, matrikelnummer, studiengang FROM studenten WHERE username = ?", (user_id,))
         student = c.fetchone()
-        print(student)
+        # print(student)
         if student:
             return User(
                 id=str(student[0]), # wird von flask-login gebraucht
@@ -54,7 +56,7 @@ def load_user(user_id):
 
         c.execute("SELECT ma_id, vorname, name, email FROM studienbüro_ma WHERE ma_id = ?", (user_id,))
         studienburo_acc = c.fetchone()
-        print(studienburo_acc)
+        # print(studienburo_acc)
         if studienburo_acc:
             return User(
                 id=str(studienburo_acc[0]), # wird von flask-login gebraucht
@@ -66,11 +68,16 @@ def load_user(user_id):
 
 
 
-@app.route("/dashboard", methods=["GET", "POST"])
+@app.route("/dashboard", methods=["GET"])
 @login_required
 def dashboard():
-    return render_template("dashboard.html")
-
+    if current_user.ma_id:
+        return render_template("dashboard_studienburo.html")
+    elif current_user.matrikelnummer:
+        return render_template("dashboard.html")
+    else:
+        return "Fehler beim Account!"
+    
 
 # @app.route("/verwaltung")
 # @login_required

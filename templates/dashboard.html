@@ -1,23 +1,10 @@
 {% extends "base.html" %}
-<!DOCTYPE html>
-<html lang="de">
-
-
-
-<head>
-     <meta charset="UTF-8"> 
-    <title>Startseite</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-<form action="/dashboard" method="POST"></form>
+{% block TITLE %}Home -{% endblock %}
+{% block CONTENT %}
+<br>
 <h1>Plattform für Kurstausch an der HWR Berlin (FB1 B.Sc.)</h1>
-<a href="/dashboard">Home</a>
-        <a href="/liste">Kursabgabe</a>
-        <a href="/anfrage_liste">Kursanfrage</a>
-        <a href="/profil">Profil</a>
-        <a href="/show">Logout</a>
+<br>
+<a href="/liste">Kurs abgeben</a>
+<a href="/anfrage_liste">Kurs anfragen</a>
 
-
-</body>
-</html>
+{% endblock %}

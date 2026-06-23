@@ -1,5 +1,10 @@
+{% if current_user.matrikelnummer%}
 {% extends "base.html" %}
-{% block title %}profile seite{% endblock %}
+{% elif current_user.ma_id%}
+{% extends "base_sb.html" %}
+{%endif%}
+
+{% block TITLE %}Mein Profil -{% endblock %}
 {% block CONTENT %}
 <h1>Profildaten</h1>
 

@@ -1,3 +1,7 @@
+{% extends "base_sb.html" %}
+{% block TITLE %}Alle Kurse -{% endblock %}
+{% block CONTENT %}
+
 <h2> Hier kannst du die Kurse ansehen! Anzahl aller Kurse in DB: {{ kurse|length }}</h2>
 <div>
     {% if kurse|length > 0 %}
@@ -34,3 +38,5 @@
     <p> Ein Fehler ist aufgetretten! </p>
     {% endif %}
 </div>
+
+{% endblock %}
