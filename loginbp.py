@@ -7,9 +7,7 @@ import bcrypt
 from flask_login import login_user, logout_user
 
 
-
 login_blueprint= Blueprint('login_blueprint',__name__)
-
 
 @login_blueprint.route("/")
 def login_seite():
@@ -18,7 +16,6 @@ def login_seite():
 #os für Dateipfade
 skript_ordner = os.path.dirname(os.path.abspath(__file__))
 path = os.path.join(skript_ordner, "tauschdaten.db")
-
 
 
 class RegisterForm(FlaskForm):
@@ -60,16 +57,6 @@ class RegisterForm(FlaskForm):
     validators=[DataRequired()])
 
     submit = SubmitField("Registrieren")
-
-
-
-
-
-
-
-      
-
-
 
 
 
@@ -129,8 +116,6 @@ def registrieren():
     return render_template("register.html",form=form)
 
 
-
-
 #Anmelden!!
 @login_blueprint.route("/anmelden", methods=["GET", "POST"])
 def anmelden():
@@ -174,15 +159,11 @@ def anmelden():
                 #open start application()
             
     # falls es nicht klappt, dann wird die Startseite neu geladen
-    return render_template("login.html")
-
-
-
+    return redirect("/")
 
 
 @login_blueprint.route("/slog", methods=["GET", "POST"])
 def s_anmelden():
- 
  
  if  request.method == 'POST':
      ma_id = request.form.get("ma_id")
@@ -221,12 +202,10 @@ def s_anmelden():
                 email=mitarbeiter[3])
           login_user(user_obj)
 
-          return redirect(url_for("verwaltung"))
+          return redirect(url_for("profil"))
          
 # Seite neu laden falls die Angaben falsch sind
  return render_template("studbuero.html")
-
-
 
 
 @login_blueprint.route("/logout")
@@ -240,7 +219,3 @@ def logout ():
 def studbuero():
     return render_template("studbuero.html")
  
-
-
-
-
