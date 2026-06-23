@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+{% block TITLE %}Tauschanfragen -{% endblock %}
+{% block CONTENT %}
+
 <h2> Hier kann das Studienbüro die Tausche ansehen! Anzahl aller Tausche in DB: {{ tauschdaten|length }}</h2>
 <div>
 
@@ -49,3 +53,5 @@
     <p> Ein Fehler ist aufgetretten! </p>
     {% endif %}
 </div>
+
+{% endblock %}
