@@ -34,7 +34,7 @@ class User(UserMixin):
 #user erkennen
 @login_manager.user_loader
 def load_user(user_id):
-    if not user_id:
+    if not user_id or user_id== None:
         return None
     with dbcon() as connection:
         c = connection.cursor()
@@ -63,6 +63,7 @@ def load_user(user_id):
                 name=studienburo_acc[2],
                 email=studienburo_acc[3]
             )
+
 
 
 @app.route("/dashboard", methods=["GET", "POST"])
