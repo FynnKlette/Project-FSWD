@@ -1,19 +1,26 @@
 from flask import *
-from login import app as login
 from flask_login import login_required
 from csv_upload import csv_page
 from db_update import *
 from csv_upload import *
+from login_blueprint import login_blueprint
 
 app = Flask(__name__)
 app.register_blueprint(csv_page)
+
+app.register_blueprint(login_blueprint)
 app.config["SECRET_KEY"] = "schlüssel"
 
 DB_PATH = 'tauschdaten.db'
 
-@app.route("/")
-def startapp():
+@app.route("/dashboard", methods=["GET", "POST"])
+def dashboard():
     return render_template("dashboard.html")
+
+
+@app.route("/verwaltung")
+def verwaltung():
+    return render_template("verwaltung.html")
 
 # muss im app module sein sonnst klappt upload nicht!
 @app.route("/upload_csv", methods=['Get', 'Post'])
@@ -31,5 +38,18 @@ def upload_csv():
 
     return render_template("csv_upload.html", form=form)
 
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template('500.html'), 500
+
+@app.errorhandler(401)
+def internal_server_error(e):
+    return render_template('401.html'), 401
+
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000, debug=True)
+    app.run(host="127.0.0.1", port=5001, debug=True)

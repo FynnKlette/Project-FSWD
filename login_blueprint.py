@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request,flash, redirect, url_for, session
+from flask import Blueprint, render_template, request,flash, redirect, url_for, session
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, SelectField
 from wtforms.validators import DataRequired, Length, Regexp, EqualTo
@@ -6,10 +6,10 @@ import sqlite3, os
 import bcrypt 
 
 
-app = Flask(__name__)
+login_blueprint= Blueprint('login_blueprint',__name__)
 
 
-@app.route("/")
+@login_blueprint.route("/")
 def login_seite():
     return render_template("show.html")
 
@@ -17,8 +17,6 @@ def login_seite():
 skript_ordner = os.path.dirname(os.path.abspath(__file__))
 path = os.path.join(skript_ordner, "tauschdaten.db")
 
-#Sicherheitsmaßnahme
-app.config["SECRET_KEY"] = "schlüssel"
 
 
 class RegisterForm(FlaskForm):
@@ -66,21 +64,26 @@ class RegisterForm(FlaskForm):
 
 
 
-with sqlite3.connect(path) as conn:
-     cursor = conn.cursor()
-     cursor.execute("SELECT * FROM studiengang")
-     datenbank_zeilen = cursor.fetchall()
+
       
 
 
 
 
 
-@app.route("/registrieren", methods=["GET", "POST"])
+@login_blueprint.route("/registrieren", methods=["GET", "POST"])
 def registrieren():
 
     #leeres formular ertellen
     form = RegisterForm()
+
+
+
+    with sqlite3.connect(path) as conn:
+     cursor = conn.cursor()
+     cursor.execute("SELECT * FROM studiengang")
+     datenbank_zeilen = cursor.fetchall()
+
 
     #für flask muss es 2x angegeben werden also ("WiInfo", "WiInfo") --> (Value für backend, Label für frontend)
     form.studiengang.choices = [(zeile[0], zeile[0]) for zeile in datenbank_zeilen]
@@ -120,14 +123,14 @@ def registrieren():
              """, (username, matrikelnummer, name , vorname, email, hashed_password , studiengang))
             conn.commit()
         flash("Account ertellt, bitte logen Sie sich ein", "succes")
-        return redirect(url_for("login_seite"))
+        return redirect(url_for(".login_seite"))
     return render_template("register.html",form=form)
 
 
 
 
 #Anmelden!!
-@app.route("/anmelden", methods=["GET", "POST"])
+@login_blueprint.route("/anmelden", methods=["GET", "POST"])
 def anmelden():
 
  if request.method== "POST": 
@@ -164,8 +167,9 @@ def anmelden():
 
 
 
-@app.route("/slog", methods=["GET", "POST"])
+@login_blueprint.route("/slog", methods=["GET", "POST"])
 def s_anmelden():
+ 
  
  if  request.method == 'POST':
      ma_id = request.form.get("ma_id")
@@ -204,19 +208,11 @@ def s_anmelden():
 
 
 
-@app.route("/studienbuero")
+@login_blueprint.route("/studienbuero")
 def studbuero():
     return render_template("studbuero.html")
  
 
-@app.route("/dashboard")
-def dashboard():
-    return render_template("dashboard.html")
-
-@app.route("/verwaltung")
-def verwaltung():
-    return render_template("verwaltung.html")
 
 
-if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+
