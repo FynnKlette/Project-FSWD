@@ -48,37 +48,32 @@ Mir ist weiterhin bewusst, dass ich, sofern ich zur Erstellung dieser Arbeit KI-
 
 ## Top-3 Contributions
 
-| \# | My contribution | Why I am proud of it | Which challenge I overcame |
-| :-- | :-- | :-- | :-- |
-| 1 | [Describe your individual contribution] |  |  |
-| 2 |  |  |  |
-| 3 |  |  |  |
+| # | My contribution | Why I am proud of it | Which challenge I overcame |
+|---|---|---|---|
+| 1 | Built the Kursabgabe and Kursanfrage modules with Flask, WTForms, and SQLite. | It is the core matching functionality of the app. | Implementing full CRUD with form validation and the PRG pattern as a beginner. |
+| 2 | Added user validation against the studenten table and duplicate protection per user/course. | Makes the app robust and protects the fairness of the waiting list. | Understanding where validation belongs (app vs. database). |
+| 3 | Resolved merge conflicts during team refactoring (Blueprint structure, shared templates). | Learned real Git teamwork under pressure. | Working with merge conflicts and `--ours/--theirs` for the first time. |
 
 ## Design Decisions that I led
 
-1. [DD #00](../design-decisions/dd-00.md)
-2. [DD #01](../design-decisions/dd-01.md)
-
----
+* [DD-01: Waiting List Principle (FIFO)](../design-decisions/dd-asem-01-wartelistenprinzip.md)
+* [DD-02: Duplicate Protection](../design-decisions/dd-asem-02-duplikatschutz.md)
 
 ## Contributions
 
 | Contribution | Proof, e.g., git commits | Sources used |
-| :-- | :-- | :-- |
-| [Design Challenge research] | [Research traces](../product-discovery/01-design-challenge.md#raw-materia) | See left |
-| [Refactor to use Flask Blueprints] | [Commit 1](https://github.com/hwrberlin/fswd/commit/d816e4), [Commit 2](https://github.com/hwrberlin/fswd/commit/75a6c1) | [Flask Documentation](https://flask.palletsprojects.com/en/stable/blueprints/#the-concept-of-blueprints) |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-
----
+|---|---|---|
+| Implemented `/abgaben` route with JOIN | PR #1, #2 | Flask Documentation, SQLite Docs |
+| WTForms form for new submissions, POST + INSERT | PR #3 | Flask-WTF Documentation |
+| PRG pattern with flash messages and ORDER BY zeitpunkt ASC | PR #3 | Flask Documentation |
+| Mirrored logic for course requests (`/anfragen`) | PR #4 | — |
+| User validation + duplicate protection | PR #4 | — |
+| Styled flash messages (green/red) | PR #4 | — |
+| Refactored module to team structure | PR #4 | — |
 
 ## AI Directory
 
-[You must maintain a comprehensive AI Directory, as per [FB1 Regulations on Generative AI Use](../assets/pdf/FB1_KI_Regelung_DE_ENG.pdf). "Catch-all" disclosure (like "AI Tool used for bugfixing") is generally not sufficient. You may list an *AI Tool* multiple times, e.g., if you have used it for different purposes / in different parts of your project. Any use of Agentic AI is **forbidden**.]
-
-| #   | AI Tool | Purpose of Use | Affected Sections (Code + Docs) | Remarks, Procedure, Prompts |
-| :-- | :--     | :--            | :--                             | :--                         |
-| 01  |         |                |                                 |                             |
-| 02  |         |                |                                 |                             |
-| ... |         |                |                                 |                             |
+| # | AI Tool | Purpose of Use | Affected Sections (Code + Docs) | Remarks, Procedure, Prompts |
+|---|---|---|---|---|
+| 01 | ChatGPT (OpenAI) | Bug fixing | Code (.py files) | Used to analyse error messages and related code snippets. The tool provided possible causes and likely locations of errors, and in some cases suggested solutions in the form of short code snippets. |
+| 02 | DeepL Write | Wording and translation | Docs (DD-01, DD-02, this page) | Used to improve wording, grammar, and readability of documentation texts. The tool suggested alternative phrasings and corrections. |
