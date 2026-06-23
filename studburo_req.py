@@ -3,7 +3,7 @@ from flask import current_app, abort
 from flask import request
 from flask import session
 from flask_login import current_user
-from csv_upload import dbcon
+from studienburo import dbcon
 from flask_login import login_required
 
 EXEMPT_METHODS = {"OPTIONS"}
