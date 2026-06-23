@@ -1,0 +1,30 @@
+---
+title: DD-01-Asem-Waiting-List
+parent: Design Decisions
+---
+
+# 01: Waiting List Principle (FIFO) for Submissions and Requests
+{: .no_toc }
+
+## Meta
+
+* **Status**: Decided
+* **Updated**: 22-Jun-2026
+
+## Problem Statement
+
+In the Kursbörse application, multiple students can register for the same course as either a submitter or a requester. When the student office processes an exchange, it must be clear which person comes first. Without a defined rule, the matching could appear arbitrary or unfair. We had to decide how to order entries in the abgabe and anfrage tables in a way that is both technically simple and easy to justify to users.
+
+## Decision
+
+The decision was made to sort the lists for both submissions and requests by their timestamp in ascending order. The SQL queries use ORDER BY zeitpunkt ASC, and the abgabe and anfrage tables include a zeitpunkt column with DEFAULT CURRENT_TIMESTAMP, so the time is automatically recorded at insertion. This corresponds to the FIFO principle (First-In-First-Out) and mirrors real-life waiting lists: whoever was there first is served first. The approach was chosen because it is intuitive for the user, transparent in its rules, and trivial to implement with standard SQL.
+
+## Regarded Options
+
+One possible option was to assign matches randomly. The advantage would be that no user is favored based on speed, but the disadvantage is that the system would feel arbitrary and decisions could not be explained or audited. This was rejected because fairness needs to be visible, not just statistical.
+
+A second option was alphabetical sorting by username. While this would produce a stable order, it would systematically favor users whose names start with letters early in the alphabet, which is clearly unfair and not aligned with the waiting list metaphor.
+
+A third option was reverse chronological order (LIFO, newest first). This was rejected because it rewards recent activity instead of accumulated waiting time, which contradicts the core idea of a waiting list.
+
+FIFO was ultimately chosen because it is the only option that is both fair in principle and easy to explain to end users.
