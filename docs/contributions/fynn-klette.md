@@ -46,14 +46,15 @@ Mir ist weiterhin bewusst, dass ich, sofern ich zur Erstellung dieser Arbeit KI-
 
 | \# | My contribution | Why I am proud of it | Which challenge I overcame |
 | :-- | :-- | :-- | :-- |
-| 1 | [Describe your individual contribution] |  |  |
-| 2 |  |  |  |
-| 3 |  |  |  |
+| 1 | Create the basis for the html sites (design & structure) | I am proud of this because it created a consistent visual and structural foundation for the application. | I overcame the challenge of designing a Jinja base template that could be applied to the individual HTML templates. |
+| 2 | Create the database incl. the tables | I am proud of this because the database forms the technical foundation for storing and connecting the application data. | I overcame the challenge of translating the application logic into a structured relational database model. |
+| 3 | Create templates for error sites and general sites | I am proud of this because these sites make the application more complete and user-friendly. | I overcame the challenge of creating reusable and consistent pages for different situations in the application. |
 
 ## Design Decisions that I led
 
-1. [DD #02](../design-decisions/dd-02.md)
-2. [DD #01](../design-decisions/dd-01.md)
+1. [DD #01](../design-decisions/dd-01.md)
+2. [DD #02](../design-decisions/dd-02.md)
+
 
 ---
 
@@ -61,11 +62,11 @@ Mir ist weiterhin bewusst, dass ich, sofern ich zur Erstellung dieser Arbeit KI-
 
 | Contribution | Proof, e.g., git commits | Sources used |
 | :-- | :-- | :-- |
-| [Design Challenge research] | [Research traces](../product-discovery/01-design-challenge.md#raw-materia) | See left |
-| [Refactor to use Flask Blueprints] | [Commit 1](https://github.com/hwrberlin/fswd/commit/d816e4), [Commit 2](https://github.com/hwrberlin/fswd/commit/75a6c1) | [Flask Documentation](https://flask.palletsprojects.com/en/stable/blueprints/#the-concept-of-blueprints) |
-|  |  |  |
-|  |  |  |
-|  |  |  |
+| Creation Database | [Commit 1](https://github.com/FynnKlette/Project-FSWD/commit/87082fb), [commit 2](https://github.com/FynnKlette/Project-FSWD/commit/7f7ec0d), [commit 3](https://github.com/FynnKlette/Project-FSWD/commit/cd8865c) | [tutorialspoint](https://www.tutorialspoint.com/sqlite/sqlite_commands.htm) |
+| [Create CSS Stylesheet] | [Commit 4](https://github.com/hwrberlin/fswd/commit/7403d64) | [w3schools](https://www.w3schools.com/html/html_css.asp) |
+| Add Error sites /-handler | [Commit 5](https://github.com/FynnKlette/Project-FSWD/commit/7fa4f5c), [commit 6](https://github.com/FynnKlette/Project-FSWD/commit/dce1517), [commit 7](https://github.com/FynnKlette/Project-FSWD/commit/19db68e) | [tutorialspoint](https://www.tutorialspoint.com/sqlite/sqlite_commands.htm) |
+| Create 2 diffrent base.html | [Commit 8](https://github.com/FynnKlette/Project-FSWD/commit/c0adc68), [commit 9](https://github.com/FynnKlette/Project-FSWD/commit/c59e56a), [commit 10](https://github.com/FynnKlette/Project-FSWD/commit/607f48f), [commit 11](https://github.com/FynnKlette/Project-FSWD/commit/403cce6), [commit 12](https://github.com/FynnKlette/Project-FSWD/commit/e903096) | [Coding Crashkurse (YT)](hhttps://youtu.be/U5qrFwQreyg?si=E8XP2LNM072fQHNC) |  
+| Create first steps of the basis of the app | [commit 13](https://github.com/FynnKlette/Project-FSWD/commit/34a26ab), [commit 14](https://github.com/FynnKlette/Project-FSWD/commit/ae3c520), [commit 15](https://github.com/FynnKlette/Project-FSWD/commit/0b97cc6) | [Coding Crashkurse (YT)](hhttps://youtu.be/U5qrFwQreyg?si=E8XP2LNM072fQHNC) |
 
 ---
 
@@ -75,5 +76,5 @@ Mir ist weiterhin bewusst, dass ich, sofern ich zur Erstellung dieser Arbeit KI-
 
 | #   | AI Tool | Purpose of Use | Affected Sections (Code + Docs) | Remarks, Procedure, Prompts |
 | :-- | :--     | :--            | :--                             | :--                         |
-| 01  | deepl/write | wording    | Docs                            | DeepL Write was used to improve wording, grammar, and readability of documentation texts. The tool suggested alternative phrasings and corrections. |
+| 01  | deepl/write | translate & wording    | Docs                            | DeepL (Write) was used to translate, improve wording, grammar, and readability of documentation texts. The tool suggested alternative phrasings and corrections. |
 | ... |         |                |                                 |                             |
