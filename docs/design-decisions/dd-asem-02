@@ -1,0 +1,29 @@
+---
+title: DD-02-Asem-Duplicate-Protection
+parent: Design Decisions
+---
+
+# 02: Duplicate Protection for Submissions and Requests
+{: .no_toc }
+
+## Meta
+* **Status**: Decided
+* **Updated**: 22-Jun-2026
+
+## Problem Statement
+
+Without a protection mechanism, a student could submit the same course multiple times or request it multiple times. This would lead to two problems: the waiting lists would become cluttered with duplicate entries, and a user could effectively bypass the FIFO logic by submitting several times and moving themselves "to the front" of the list. We had to decide where and how to enforce a constraint that prevents these duplicates while still giving users a clear, helpful error message.
+
+## Decision
+
+The decision was made to enforce the duplicate check in the Flask route, not in the database itself. Before each INSERT into the abgabe or anfrage table, an additional SELECT query checks whether a row already exists for the same combination of username and course ID. If such an entry is found, the operation is aborted, a flash message is shown to the user, and the user is redirected back to the form. The check runs in the controller layer because SQLite has no support for custom business-logic constraints and because handling the case in the application gives a much better user experience than relying on a raw SQL exception.
+
+## Regarded Options
+
+One possible option was to add a UNIQUE constraint on the (username, kurs_id) column pair directly in the database. This would be efficient and would guarantee data integrity even outside the Flask app. The disadvantage is that a violated constraint produces a raw SQLite exception, which would either crash the request or need to be caught and translated into a user-friendly message — essentially duplicating the same logic that the application-level check already provides.
+
+A second option was to perform no check at all and accept duplicates as a known limitation. While this would have saved development time, it would have undermined the fairness of the waiting list (DD-01) and made the lists harder to read for the student office.
+
+A third option was a frontend check using JavaScript. This would give immediate feedback, but the project intentionally avoids JavaScript, and any client-side check can be bypassed by users sending direct HTTP requests.
+
+The application-level check was chosen because it gives clear, friendly error messages, keeps the validation logic visible in the Python code where it can be reviewed and maintained, and adds only one cheap SELECT per submission.
