@@ -4,6 +4,7 @@ from studienburo import studienburo
 from db_update import *
 from studienburo import *
 from loginbp import login_blueprint
+from studburo_req import studienburo_required
 
 app = Flask(__name__)
 app.register_blueprint(studienburo)
@@ -49,6 +50,7 @@ def verwaltung():
 # muss im app module sein sonnst klappt upload nicht!
 @app.route("/upload_csv", methods=['Get', 'Post'])
 @login_required
+@studienburo_required
 def upload_csv():
     form = UploadForm()
 

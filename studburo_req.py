@@ -18,7 +18,7 @@ def studienburo_required(func):
             return current_app.login_manager.unauthorized()
         else:
             user_id = current_user.get_id()
-            with dbcon as connection:
+            with dbcon() as connection:
                 c = connection.cursor()
                 c.execute("SELECT 1 FROM studienbüro_ma WHERE ma_id = ?", (user_id,))
                 user_ist_studienburo = c.fetchone()
