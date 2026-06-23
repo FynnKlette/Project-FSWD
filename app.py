@@ -3,7 +3,7 @@ from flask_login import login_required
 from csv_upload import csv_page
 from db_update import *
 from csv_upload import *
-from login_bp import login_blueprint
+from login_blueprint import login_blueprint
 
 app = Flask(__name__)
 app.register_blueprint(csv_page)
