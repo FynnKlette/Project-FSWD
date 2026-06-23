@@ -75,6 +75,5 @@ Mir ist weiterhin bewusst, dass ich, sofern ich zur Erstellung dieser Arbeit KI-
 
 | # | AI Tool | Purpose of Use | Affected Sections (Code + Docs) | Remarks, Procedure, Prompts |
 |---|---|---|---|---|
-| 01 | Claude (Anthropic) | Tutor: explanations of Flask, WTForms, Git | | Used as a step-by-step tutor in German. Typical prompts: "Erkläre mir wie WTForms funktioniert", "Was bedeutet diese Fehlermeldung?", "Wie löse ich diesen merge conflict?", "Was ist der PRG-Pattern?". 
-| 02 | ChatGPT (OpenAI) | Bug fixing | Code (.py files) | Used to analyse error messages and related code snippets. The tool provided possible causes and likely locations of errors, and in some cases suggested solutions in the form of short code snippets. |
-| 03 | DeepL Write | Wording and translation | Docs (DD-01, DD-02, this page) | Used to improve wording, grammar, and readability of documentation texts. The tool suggested alternative phrasings and corrections. |
+| 01 | ChatGPT (OpenAI) | Bug fixing | Code (.py files) | Used to analyse error messages and related code snippets. The tool provided possible causes and likely locations of errors, and in some cases suggested solutions in the form of short code snippets. |
+| 02 | DeepL Write | Wording and translation | Docs (DD-01, DD-02, this page) | Used to improve wording, grammar, and readability of documentation texts. The tool suggested alternative phrasings and corrections. |
