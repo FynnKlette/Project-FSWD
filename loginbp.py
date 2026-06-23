@@ -202,7 +202,7 @@ def s_anmelden():
                 email=mitarbeiter[3])
           login_user(user_obj)
 
-          return redirect(url_for("profil"))
+          return redirect(url_for("dashboard"))
          
 # Seite neu laden falls die Angaben falsch sind
  return render_template("studbuero.html")
