@@ -56,8 +56,8 @@ Mir ist weiterhin bewusst, dass ich, sofern ich zur Erstellung dieser Arbeit KI-
 
 ## Design Decisions that I led
 
-* [DD-01: Waiting List Principle (FIFO)](../design-decisions/dd-asem-01-wartelistenprinzip.md)
-* [DD-02: Duplicate Protection](../design-decisions/dd-asem-02-duplikatschutz.md)
+* [DD-05: Waiting List Principle (FIFO)](../design-decisions/dd-asem-01-wartelistenprinzip.md)
+* [DD-06: Duplicate Protection](../design-decisions/dd-asem-02-duplikatschutz.md)
 
 ## Contributions
 
