@@ -6,6 +6,13 @@
 </head>
 
 <body>
+    {% block HEADER %}
+      <a href="{{ url_for('dashboard') }}">Dashboard</a>
+      <a href="{{ url_for('logout') }}">Logout</a>
+    {% endblock %}
+  </nav>
+</header>
+
 
     <h1>HWR-Kurstausch</h1>
     <h2>FB 1 Bachelor Sc.</h2>
