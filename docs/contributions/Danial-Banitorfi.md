@@ -70,9 +70,9 @@ Mir ist weiterhin bewusst, dass ich, sofern ich zur Erstellung dieser Arbeit KI-
 | [Refactor to use Flask Blueprints] | [Commit 1](https://github.com/hwrberlin/fswd/commit/d816e4), [Commit 2](https://github.com/hwrberlin/fswd/commit/75a6c1) | [Flask Documentation](https://flask.palletsprojects.com/en/stable/blueprints/#the-concept-of-blueprints) |
 | starting pages | commits 1-2| Flask Documentation, |
 | validators | commits 3-4 | Flask Documentation-WTForms |
-| sign up and login (front and backend)  | commits 3-10  | Flask Documentation-SQL and lecture |
-| login studbüro | commits 6-10 |   |
-| app.py correction| commits 7-16 |  |
+| sign up and login (front and backend)  | commits 3-10  |Flask Documentation-SQL and lecture |
+| login studbüro | commits 6-10 |  Tech with Tim (YT) |
+| app.py correction| commits 7-16 | Tech with Tim (YT) |
 
 ---
 
