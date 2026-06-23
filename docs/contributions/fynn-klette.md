@@ -75,6 +75,6 @@ Mir ist weiterhin bewusst, dass ich, sofern ich zur Erstellung dieser Arbeit KI-
 
 | #   | AI Tool | Purpose of Use | Affected Sections (Code + Docs) | Remarks, Procedure, Prompts |
 | :-- | :--     | :--            | :--                             | :--                         |
-| 01  | ChatGPT | bug fixing     | Code (.py-files)                | ChatGPT wurde zur Analyse von Fehlermeldungen und zugehörigen Codeabschnitten eingesetzt. Das Tool lieferte mögliche Ursachen, wahrscheinliche Fehlerorte und in einigen Fällen kurze Code-Schnipsel als Lösungsvorschläge. |
+| 01  | ChatGPT | bug fixing     | Code (.py-files)                | ChatGPT was used to analyse error messages and related code snippets. The tool provided possible causes and likely locations of errors, and in some cases suggested solutions in the form of short code snippets. |
 | 02  | deepl/write | wording    | Docs                            | DeepL Write was used to improve wording, grammar, and readability of documentation texts. The tool suggested alternative phrasings and corrections. |
 | ... |         |                |                                 |                             |
