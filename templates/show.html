@@ -30,7 +30,13 @@
     {% endfor %}
 {% endwith %}
 
-
+{% with messages = get_flashed_messages(category_filter=["zugriff_nichtig"]) %}
+    {% for message in messages %}
+      <div style="color: white; background-color: #ff4d4d; padding: 7px; margin-bottom: 15px; border-radius: 5px;">
+        {{ message }}
+      </div>
+    {% endfor %}
+    {% endwith %}
 <br> 
 <form action="/anmelden" method="POST">
     <input
