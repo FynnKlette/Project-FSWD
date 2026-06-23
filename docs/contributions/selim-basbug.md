@@ -51,9 +51,14 @@ Mir ist weiterhin bewusst, dass ich, sofern ich zur Erstellung dieser Arbeit KI-
 
 | \# | My contribution | Why I am proud of it | Which challenge I overcame |
 | :-- | :-- | :-- | :-- |
-| 1 | i made the entire functionality for the studienburo: the csv_upload, listing of courses/modules in db and listing of the tausch table|i had no issues while coding, did not use any ai  | sometimes i made little spelling / syntax mistakes with took me some time to find |
-| 2 |  |  |  |
-| 3 |  |  |  |
+| 1 | i made the entire functionality for the studienburo: the csv_upload, listing of courses/modules in db and listing of the tausch table | i had no issues while coding, did not use any ai | sometimes i made little spelling / syntax mistakes with took me some time to find |
+| 2 | made the global_tauschfindung method in tausch.py | i thought it would be complicated; it wasnt| had to trail error alot |
+| 3 | copied login_required into studburo_required  | did my own logic with the db query and it worked | import EEXCEMPT_METHODS didnt work so i clicked trough the modules and it was just a string i could copy into my own decorator :> |
+
+| 3 | tried my best to make everyones work together | it worked in the end after days with small sleep and small freetime | understanding took some time of the code from my teampatners |
+| 4 | /profile_api view | i got it working in 5mins | i tought just return jsonfiy(current_user) would work but i had to look up all current_user. endings for json thigns and fortunely tired __dict__ and it worked |
+| 5 | made the clear db function | did my own logic with the db query and it worked | / |
+| 7 | made dummy.py to work on tausch.py while teampatners worked on implementing kursabgabe.py | its just a debug module but tested some sql | / |
 
 ## Design Decisions that I led
 
@@ -66,13 +71,17 @@ Mir ist weiterhin bewusst, dass ich, sofern ich zur Erstellung dieser Arbeit KI-
 
 | Contribution | Proof, e.g., git commits | Sources used |
 | :-- | :-- | :-- |
-| [Design Challenge research] | [Research traces](../product-discovery/01-design-challenge.md#raw-materia) | See left |
-| [Refactor to use Flask Blueprints] | [Commit 1](https://github.com/hwrberlin/fswd/commit/d816e4), [Commit 2](https://github.com/hwrberlin/fswd/commit/75a6c1) | [Flask Documentation](https://flask.palletsprojects.com/en/stable/blueprints/#the-concept-of-blueprints) |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-
+| manually created fb1.csv trough Vorlesungsverzeichnis on S.A.M by copying the raw html and making an csv out of it | | https://sam.hwr-berlin.de/de/vorlesungsverzeichnis.php , https://www.w3schools.com/sql/ , https://docs.python.org/3/library/io.html|
+| created and maintained csv_upload module and studienburo module|  | / |
+| created and maintained studburo_req module |  | login_required module copied |
+| created and maintained tausch, dummy, db_reinigen and db_update modules |  | https://www.w3schools.com/sql/ |
+| made each module of project into a blueprint and added to app.py |  | https://flask.palletsprojects.com/en/stable/blueprints/ |
+| added profile, upload_csv, profil, profile_api, dashboard views to app.py |  | https://flask-json.readthedocs.io/en/latest/index.html |
+| configured jinja all templates of project to work with base and base_sb templates correctly | | https://jinja.palletsprojects.com/en/stable/templates/|
+| corrected UserMixin user data to contain all data except password | | https://flask-login.readthedocs.io/en/latest/ |
 ---
+
+i have too many commits to paste each one. Apologies!
 
 ## AI Directory
 
