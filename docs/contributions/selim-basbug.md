@@ -51,7 +51,7 @@ Mir ist weiterhin bewusst, dass ich, sofern ich zur Erstellung dieser Arbeit KI-
 
 | \# | My contribution | Why I am proud of it | Which challenge I overcame |
 | :-- | :-- | :-- | :-- |
-| 1 | [Describe your individual contribution] |  |  |
+| 1 | i made the entire functionality for the studienburo: the csv_upload, listing of courses/modules in db and listing of the tausch table|i had no issues while coding, did not use any ai  | sometimes i made little spelling / syntax mistakes with took me some time to find |
 | 2 |  |  |  |
 | 3 |  |  |  |
 

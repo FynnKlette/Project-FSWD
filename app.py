@@ -1,4 +1,5 @@
 from flask import *
+from flask import jsonify
 from flask_login import login_required, UserMixin, LoginManager, current_user
 from studienburo import studienburo
 from db_update import *
@@ -94,6 +95,11 @@ def impressum():
 @login_required
 def profil():
     return render_template("profil.html")
+
+@app.route("/profile_api")
+@login_required
+def profileapi():
+    return jsonify(current_user.__dict__)
 
 
 # muss im app module sein sonnst klappt upload nicht!
