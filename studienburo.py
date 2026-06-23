@@ -46,5 +46,5 @@ def module():
     return render_template("module.html", module=alle_module())
 
 @studienburo.route("/tauschverwaltung", methods=['Get'])
-def module():
+def tausche():
     return render_template("tauschverwaltung.html", tausche=alle_tausche())
