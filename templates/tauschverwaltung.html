@@ -1,0 +1,51 @@
+<h2> Hier kann das Studienbüro die Tausche ansehen! Anzahl aller Tausche in DB: {{ tauschdaten|length }}</h2>
+<div>
+
+    {% if tauschdaten|length > 0 %}
+    <table>
+        <thead style="text-align: center;">
+            <tr>
+                <th>Tausch ID</th>
+
+                <th>Anfrage ID</th>
+                <th>Anfrage Student Name</th>
+                <th>Anfrage Student MNR</th>
+
+                <th>Abgabe ID</th>
+                <th>Abgabe Student Name</th>
+                <th>Abgabe Student MNR</th>
+
+                <th>Kurs ID </th>
+                <th>Kursbezeichnung</th>
+                <th>Semester</th>
+                <th>Dozent</th>
+                <th>Sprache</th>
+            </tr>
+        </thead>
+        <tbody style="text-align: center;">
+        {% for tausch in tauschdaten %}
+        <tr>
+            <td>{{tausch[0]}}</td>
+            <td>{{tausch[1]}}</td>
+            <td>{{tausch[2]}} {{tausch[3]}}</td>
+            <td>{{tausch[4]}}</td>
+
+            <td>{{tausch[5]}}</td>
+            <td>{{tausch[6]}} {{tausch[7]}}</td>
+            <td>{{tausch[8]}}</td>
+            <td>{{tausch[9]}}</td>
+    
+            <td>{{tausch[10]}}</td>
+            <td>{{tausch[11]}}</td>
+            <td>{{tausch[12]}}</td>
+            <td>{{tausch[13]}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% elif  tauschdaten|length == 0 %}
+    <p> Es gibt keine Module in der DB</p>
+    {% else %}
+    <p> Ein Fehler ist aufgetretten! </p>
+    {% endif %}
+</div>

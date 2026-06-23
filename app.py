@@ -1,12 +1,11 @@
 from flask import *
 from flask_login import login_required
-from studienburo import studienburo
 from db_update import *
 from studienburo import *
 from login_blueprint import login_blueprint
 
 app = Flask(__name__)
-app.register_blueprint(studienburo)
+app.register_blueprint(sb)
 
 app.register_blueprint(login_blueprint)
 app.config["SECRET_KEY"] = "schlüssel"
