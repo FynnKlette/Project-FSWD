@@ -1,14 +1,12 @@
 import sqlite3
-from flask import Flask, render_template, redirect, url_for, flash
+from flask import Flask, render_template, redirect, url_for, flash, Blueprint
 from flask_wtf import FlaskForm
 from wtforms import SelectField, StringField, SubmitField
 from wtforms.validators import DataRequired
 
-app = Flask(__name__)
-app.config["SECRET_KEY"] = "asem-dev-key-2026"
+kursabgabe = Blueprint("kursabgabe", __name__)
 
 DB_PATH = "tauschdaten.db"
-
 
 class AbgabeForm(FlaskForm):
     kurs = SelectField(
@@ -32,7 +30,7 @@ class AnfrageForm(FlaskForm):
     submit = SubmitField("Anfrage speichern")
 
 
-@app.route("/abgaben")
+@kursabgabe.route("/abgaben")
 def abgaben_liste():
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
@@ -48,7 +46,7 @@ def abgaben_liste():
     return render_template("liste.html", abgaben=abgaben)
 
 
-@app.route("/abgaben/neu", methods=["GET", "POST"])
+@kursabgabe.route("/abgaben/neu", methods=["GET", "POST"])
 def abgabe_neu():
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
@@ -97,7 +95,7 @@ def abgabe_neu():
     return render_template("form.html", form=form)
 
 
-@app.route("/anfragen")
+@kursabgabe.route("/anfragen")
 def anfragen_liste():
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
@@ -113,7 +111,7 @@ def anfragen_liste():
     return render_template("anfrage_liste.html", anfragen=anfragen)
 
 
-@app.route("/anfragen/neu", methods=["GET", "POST"])
+@kursabgabe.route("/anfragen/neu", methods=["GET", "POST"])
 def anfrage_neu():
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
@@ -160,7 +158,3 @@ def anfrage_neu():
 
     conn.close()
     return render_template("anfrage_form.html", form=form)
-
-
-if __name__ == "__main__":
-    app.run(debug=True, port=5002)

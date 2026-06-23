@@ -67,7 +67,7 @@ def upload_csv():
 
 
 @app.errorhandler(404)
-def page_not_found(e):
+def not_found(e):
     return render_template('404.html'), 404
 
 @app.errorhandler(500)

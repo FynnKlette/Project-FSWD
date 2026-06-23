@@ -13,4 +13,5 @@ nav_order: 2
 {: .text-delta }
 </details>
 
+![ERM](assets/images/ERM.png)
 [Visualize and describe the data model(s) of your application. This description should match the actual implementation. Avoid redundant information.]
