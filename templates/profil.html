@@ -20,4 +20,16 @@
     <p>Studienbüro Account ID: {{ current_user.ma_id }}</p>
     {%endif%}
 
+    {% if current_user.matrikelnummer %}
+    <h3>Meine Tauschanfragen! Anzahl: {{ user_tausche|length }}</h3>
+
+     <ul>
+      {% for tausch in user_tausche %}
+        {# SELECT tausch_id, anf.username, abg.username, anf.kurs_id, abg.kurs_id #}
+        {#           0          1               2             3           4      #}
+        <li>#{{tausch[0]}}: {{tausch[1]}} hat {{tausch[3]}} mit {{tausch[2]}} für {{tausch[4]}} getauscht! </li>
+      {% endfor %}
+    </ul>
+    {%endif%}
+
 {% endblock %}

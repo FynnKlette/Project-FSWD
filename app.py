@@ -94,7 +94,17 @@ def impressum():
 @app.route("/profil")
 @login_required
 def profil():
-    return render_template("profil.html")
+    with dbcon() as connection:
+        username = current_user.username
+        c = connection.cursor()
+        c.execute("""SELECT tausch_id, anf.username, abg.username, anf.kurs_id, abg.kurs_id FROM tausch t 
+                  JOIN anfrage anf ON t.anfrage_id = anf.anfrage_id
+                  JOIN abgabe abg ON t.abgabe_id = abg.abgabe_id
+                  WHERE anf.username = ? OR abg.username = ?
+                  """
+                  , (username,username,))
+        user_tausche = c.fetchall()
+    return render_template("profil.html", user_tausche=user_tausche)
 
 # angepasste api
 @app.route("/profil/<string:username>")
