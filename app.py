@@ -94,12 +94,26 @@ def impressum():
 @app.route("/profil")
 @login_required
 def profil():
-    return render_template("profil.html")
+    with dbcon() as connection:
+        username = current_user.username
+        c = connection.cursor()
+        c.execute("""SELECT tausch_id, anf.username, abg.username, anf.kurs_id, abg.kurs_id, status FROM tausch t 
+                  JOIN anfrage anf ON t.anfrage_id = anf.anfrage_id
+                  JOIN abgabe abg ON t.abgabe_id = abg.abgabe_id
+                  WHERE anf.username = ? OR abg.username = ?
+                  """
+                  , (username,username,))
+        user_tausche = c.fetchall()
+    return render_template("profil.html", user_tausche=user_tausche)
 
-@app.route("/profile_api")
-@login_required
-def profileapi():
-    return jsonify(current_user.__dict__)
+# angepasste api
+@app.route("/profil/<string:username>")
+def profileapi(username):
+     with dbcon() as connection:
+        c = connection.cursor()
+        c.execute("SELECT username, vorname, name, email, matrikelnummer, studiengang FROM studenten WHERE username = ?", (username,))
+        profil = c.fetchone()
+        return jsonify(profil)
 
 
 # muss im app module sein sonnst klappt upload nicht!

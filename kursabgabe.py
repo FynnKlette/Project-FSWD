@@ -4,6 +4,7 @@ from flask_wtf import FlaskForm
 from wtforms import SelectField, StringField, SubmitField
 from wtforms.validators import DataRequired
 from flask_login import current_user
+from tausch import globale_tauschfindung
 
 kursabgabe = Blueprint("kursabgabe", __name__)
 
@@ -28,21 +29,23 @@ class AnfrageForm(FlaskForm):
     )
     submit = SubmitField("Anfrage speichern")
 
-
+# zuvor ohne username nun mit username -> nur eigene abgaben angezeigt
 @kursabgabe.route("/abgaben")
 def abgaben_liste():
+    globale_tauschfindung() # -> ohne das callen wird garnicht gematched!
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     cursor.execute("""
         SELECT abgabe.abgabe_id, kursangebot.kursbezeichnung, abgabe.username, abgabe.zeitpunkt
         FROM abgabe
         JOIN kursangebot ON abgabe.kurs_id = kursangebot.kurs_id
+        WHERE abgabe.username = ?
         ORDER BY abgabe.zeitpunkt ASC
-    """)
+    """, (current_user.username, ))
     abgaben = cursor.fetchall()
     conn.close()
 
-    return render_template("liste.html", abgaben=abgaben)
+    return render_template("abgabe_liste.html", abgaben=abgaben)
 
 
 @kursabgabe.route("/abgaben/neu", methods=["GET", "POST"])
@@ -88,26 +91,29 @@ def abgabe_neu():
         )
         conn.commit()
         conn.close()
+        globale_tauschfindung() # -> ohne das callen wird garnicht gematched!
         flash("Abgabe erfolgreich gespeichert!", "success")
         return redirect(url_for("kursabgabe.abgaben_liste"))
 
     conn.close()
     return render_template("form.html", form=form)
 
-
+# zuvor ohne username nun mit username -> nur eigene anfragen angezeigt
 @kursabgabe.route("/anfragen")
 def anfragen_liste():
+    globale_tauschfindung() # -> ohne das callen wird garnicht gematched!
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     cursor.execute("""
         SELECT anfrage.anfrage_id, kursangebot.kursbezeichnung, anfrage.username, anfrage.zeitpunkt
         FROM anfrage
         JOIN kursangebot ON anfrage.kurs_id = kursangebot.kurs_id
+        WHERE anfrage.username = ? 
         ORDER BY anfrage.zeitpunkt ASC
-    """)
+    """, (current_user.username,))
     anfragen = cursor.fetchall()
     conn.close()
-
+    
     return render_template("anfrage_liste.html", anfragen=anfragen)
 
 
@@ -154,6 +160,7 @@ def anfrage_neu():
         )
         conn.commit()
         conn.close()
+        globale_tauschfindung() # -> ohne das callen wird garnicht gematched!
         flash("Anfrage erfolgreich gespeichert!", "success")
         return redirect(url_for("kursabgabe.anfragen_liste"))
 

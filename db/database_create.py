@@ -87,7 +87,7 @@ with sqlite3.connect(db_path) as conn:
         zeitpunkt DATETIME DEFAULT CURRENT_TIMESTAMP,
                    
         FOREIGN KEY (kurs_id) REFERENCES kursangebot(kurs_id),
-        FOREIGN KEY (username) REFERENCES student(username)
+        FOREIGN KEY (username) REFERENCES studenten(username)
     )
     """) 
 
@@ -99,21 +99,32 @@ with sqlite3.connect(db_path) as conn:
         zeitpunkt DATETIME DEFAULT CURRENT_TIMESTAMP,
                    
         FOREIGN KEY (kurs_id) REFERENCES kursangebot(kurs_id),
-        FOREIGN KEY (username) REFERENCES student(username)
+        FOREIGN KEY (username) REFERENCES studenten(username)
     )
     """) 
-    
+    # status implementiert von selim 
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS tausch (
         tausch_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
         anfrage_id INTEGER NOT NULL,
         abgabe_id INTEGER NOT NULL,
+        status TEXT NOT NULL DEFAULT 'pending',
                    
         FOREIGN KEY (anfrage_id) REFERENCES anfrage(anfrage_id),
         FOREIGN KEY (abgabe_id) REFERENCES abgabe(abgabe_id)
     )
     """) 
 
+# Delete tables to Fixing fk student in abgabe and anfrage tables
+'''
+    cursor.execute("""
+    DROP TABLE IF EXISTS abgabe;
+    """)
+                   
+    cursor.execute("""
+    DROP TABLE IF EXISTS anfrage;
+    """)
+'''
 
 conn.commit()
 

@@ -2,52 +2,72 @@
 {% block TITLE %}Tauschanfragen -{% endblock %}
 {% block CONTENT %}
 
-<h2> Hier kann das Studienbüro die Tausche ansehen! Anzahl aller Tausche in DB: {{ tauschdaten|length }}</h2>
+<h2> Hier kann das Studienbüro die Tausche ansehen! Anzahl aller Tausche in DB: {{ tausche|length }}</h2>
 <div>
 
-    {% if tauschdaten|length > 0 %}
-    <table>
+    {% if tausche|length %}
+    <table style="padding: 10px; border: 1px solid black;">
         <thead style="text-align: center;">
             <tr>
                 <th>Tausch ID</th>
 
-                <th>Anfrage ID</th>
-                <th>Anfrage Student Name</th>
-                <th>Anfrage Student MNR</th>
+                <th>Anfr ID</th>
+                <th>Anfr Student Username</th>
+                <th>Anfr Student MNR</th>
 
-                <th>Abgabe ID</th>
-                <th>Abgabe Student Name</th>
-                <th>Abgabe Student MNR</th>
+                <th>Abg ID</th>
+                <th>Abg Student Username</th>
+                <th>Abg Student MNR</th>
 
                 <th>Kurs ID </th>
                 <th>Kursbezeichnung</th>
                 <th>Semester</th>
                 <th>Dozent</th>
                 <th>Sprache</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody style="text-align: center;">
-        {% for tausch in tauschdaten %}
+        {% for tausch in tausche %}
         <tr>
             <td>{{tausch[0]}}</td>
-            <td>{{tausch[1]}}</td>
-            <td>{{tausch[2]}} {{tausch[3]}}</td>
-            <td>{{tausch[4]}}</td>
 
+            <td>{{tausch[1]}}</td>
+            <td>{{tausch[2]}}</td>
+            <td>{{tausch[3]}}</td>
+
+            <td>{{tausch[4]}}</td>
             <td>{{tausch[5]}}</td>
-            <td>{{tausch[6]}} {{tausch[7]}}</td>
+            <td>{{tausch[6]}}</td>
+
+            <td>{{tausch[7]}}</td>
             <td>{{tausch[8]}}</td>
             <td>{{tausch[9]}}</td>
-    
             <td>{{tausch[10]}}</td>
             <td>{{tausch[11]}}</td>
-            <td>{{tausch[12]}}</td>
-            <td>{{tausch[13]}}</td>
+            {# <td>{{tausch[12]}}</td> #}
+            <td>
+                <form action="{{ url_for('studienburo.tausch_status', tausch_id=tausch[0]) }}" method="post">
+                {# {% if tausch[12] == "pending"%} selected {% endif%} -> ie Anzeige des Dropdown entsprechend des statuses wird angezeigt #}
+                    <select name="status" onchange="this.form.submit()"> 
+                    <option style="color: gray;" value="pending" {% if tausch[12] == "pending"%} selected {% endif%} >
+                        Pending
+                    </option>
+                    <option style="color: green;" value="accepted" {% if tausch[12] == "accepted"%} selected {% endif%}>
+                        Angenommen
+                    </option>
+                    <option style="color: red;" value="rejected" {% if tausch[12] == "rejected"%} selected {% endif%}>
+                        Abgelehnt
+                    </option>
+                    </select>
+                </form>
+            </td>
+
         </tr>
         {% endfor %}
         </tbody>
     </table>
-    {% elif  tauschdaten|length == 0 %}
+    {% elif  tausche|length == 0 %}
     <p> Es gibt keine Module in der DB</p>
     {% else %}
     <p> Ein Fehler ist aufgetretten! </p>
