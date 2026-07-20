@@ -87,7 +87,7 @@ with sqlite3.connect(db_path) as conn:
         zeitpunkt DATETIME DEFAULT CURRENT_TIMESTAMP,
                    
         FOREIGN KEY (kurs_id) REFERENCES kursangebot(kurs_id),
-        FOREIGN KEY (username) REFERENCES student(username)
+        FOREIGN KEY (username) REFERENCES studenten(username)
     )
     """) 
 
@@ -99,7 +99,7 @@ with sqlite3.connect(db_path) as conn:
         zeitpunkt DATETIME DEFAULT CURRENT_TIMESTAMP,
                    
         FOREIGN KEY (kurs_id) REFERENCES kursangebot(kurs_id),
-        FOREIGN KEY (username) REFERENCES student(username)
+        FOREIGN KEY (username) REFERENCES studenten(username)
     )
     """) 
     
@@ -114,6 +114,16 @@ with sqlite3.connect(db_path) as conn:
     )
     """) 
 
+# Delete tables to Fixing fk student in abgabe and anfrage tables
+'''
+    cursor.execute("""
+    DROP TABLE IF EXISTS abgabe;
+    """)
+                   
+    cursor.execute("""
+    DROP TABLE IF EXISTS anfrage;
+    """)
+'''
 
 conn.commit()
 
