@@ -102,12 +102,13 @@ with sqlite3.connect(db_path) as conn:
         FOREIGN KEY (username) REFERENCES studenten(username)
     )
     """) 
-    
+    # status implementiert von selim 
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS tausch (
         tausch_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
         anfrage_id INTEGER NOT NULL,
         abgabe_id INTEGER NOT NULL,
+        status TEXT NOT NULL DEFAULT 'pending',
                    
         FOREIGN KEY (anfrage_id) REFERENCES anfrage(anfrage_id),
         FOREIGN KEY (abgabe_id) REFERENCES abgabe(abgabe_id)

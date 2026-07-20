@@ -25,9 +25,16 @@
 
      <ul>
       {% for tausch in user_tausche %}
-        {# SELECT tausch_id, anf.username, abg.username, anf.kurs_id, abg.kurs_id #}
-        {#           0          1               2             3           4      #}
-        <li>#{{tausch[0]}}: {{tausch[1]}} hat {{tausch[3]}} mit {{tausch[2]}} für {{tausch[4]}} getauscht! </li>
+        {# SELECT tausch_id, anf.username, abg.username, anf.kurs_id, abg.kurs_id, status #}
+        {#           0          1               2             3           4           5 #}
+        <li>Tauschanfrage #{{tausch[0]}}: {{tausch[1]}} möchte {{tausch[3]}} mit {{tausch[2]}} für {{tausch[4]}} tauschen. 
+        Status: 
+        {% if tausch[5] == "pending" %} <b style="color: gray;">Pending</b>
+        {% elif tausch[5] == "accepted"%} <b style="color: green;">Angenommen</b>
+        {% elif tausch[5] == "rejected"%} <b style="color: red;">Abgelehnt</b>
+        {% else %} <b>Fehler!</b>
+        {% endif %}
+        </li>
       {% endfor %}
     </ul>
     {%endif%}

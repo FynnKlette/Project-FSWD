@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, jsonify, redirect, request, url_for
 from flask import render_template
 from flask_wtf import FlaskForm
 from flask_wtf.file import *
@@ -33,7 +33,19 @@ def alle_module():
 def alle_tausche():
     with dbcon() as connection:
         c = connection.cursor()
-        c.execute("SELECT * FROM tausch")
+        c.execute("""
+        SELECT t.tausch_id, anfr.anfrage_id, anfr.username, anfr_stu.matrikelnummer,
+                abg.abgabe_id, abg.username, abg_stu.matrikelnummer,
+                k.kurs_id, k.kursbezeichnung, k.semester, k.dozent, k.sprache,
+                t.status
+                FROM tausch t
+                JOIN anfrage anfr ON t.anfrage_id = anfr.anfrage_id
+                JOIN abgabe abg ON t.abgabe_id = abg.abgabe_id
+                JOIN studenten anfr_stu ON anfr.username = anfr_stu.username
+                JOIN studenten abg_stu ON abg.username = abg_stu.username
+                JOIN kursangebot k ON anfr.kurs_id = k.kurs_id
+                ORDER BY t.tausch_id ASC
+        """)
         alle_tausche = c.fetchall()
         c.close()
     return alle_tausche
@@ -51,4 +63,24 @@ def module():
 @studienburo.route("/tauschverwaltung", methods=['Get'])
 @studienburo_required
 def tausche():
+    # print(alle_tausche()) 
     return render_template("tauschverwaltung.html", tausche=alle_tausche())
+
+@studienburo.route("/tauschverwaltung/status/<int:tausch_id>", methods=['Post'])
+@studienburo_required
+def tausch_status(tausch_id):
+    status = request.form["status"]
+    with dbcon() as connection:
+            c = connection.cursor()
+            c.execute("""
+            UPDATE tausch
+            SET status = ?
+            WHERE tausch_id = ?
+            """,(status, tausch_id))
+
+            c.close()
+            connection.commit()
+    return redirect(url_for("studienburo.tausche"))
+            
+
+
