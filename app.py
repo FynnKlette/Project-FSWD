@@ -96,10 +96,14 @@ def impressum():
 def profil():
     return render_template("profil.html")
 
-@app.route("/profile_api")
-@login_required
-def profileapi():
-    return jsonify(current_user.__dict__)
+# angepasste api
+@app.route("/profil/<string:username>")
+def profileapi(username):
+     with dbcon() as connection:
+        c = connection.cursor()
+        c.execute("SELECT username, vorname, name, email, matrikelnummer, studiengang FROM studenten WHERE username = ?", (username,))
+        profil = c.fetchone()
+        return jsonify(profil)
 
 
 # muss im app module sein sonnst klappt upload nicht!
