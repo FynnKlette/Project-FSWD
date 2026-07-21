@@ -3,6 +3,7 @@
 
 <head>
     <title>{% block TITLE %}{% endblock %} Tauschtool</title>
+     {{ bootstrap.load_css() }}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 
     
@@ -30,6 +31,8 @@
         <p><a href="/impressum">Impressum</a></p>
         {% endblock %}</footer>
 </section>
+{{ bootstrap.load_js() }}
+
 </body>
 
 </html>
