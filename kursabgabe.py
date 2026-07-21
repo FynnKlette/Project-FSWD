@@ -3,7 +3,7 @@ from flask import Flask, render_template, redirect, url_for, flash, Blueprint
 from flask_wtf import FlaskForm
 from wtforms import SelectField, StringField, SubmitField
 from wtforms.validators import DataRequired
-from flask_login import current_user
+from flask_login import current_user, login_required
 from tausch import globale_tauschfindung
 
 kursabgabe = Blueprint("kursabgabe", __name__)
@@ -31,6 +31,7 @@ class AnfrageForm(FlaskForm):
 
 # zuvor ohne username nun mit username -> nur eigene abgaben angezeigt
 @kursabgabe.route("/abgaben")
+@login_required
 def abgaben_liste():
     globale_tauschfindung() # -> ohne das callen wird garnicht gematched!
     conn = sqlite3.connect(DB_PATH)
@@ -49,6 +50,7 @@ def abgaben_liste():
 
 
 @kursabgabe.route("/abgaben/neu", methods=["GET", "POST"])
+@login_required
 def abgabe_neu():
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
@@ -100,6 +102,7 @@ def abgabe_neu():
 
 # zuvor ohne username nun mit username -> nur eigene anfragen angezeigt
 @kursabgabe.route("/anfragen")
+@login_required
 def anfragen_liste():
     globale_tauschfindung() # -> ohne das callen wird garnicht gematched!
     conn = sqlite3.connect(DB_PATH)
@@ -118,6 +121,7 @@ def anfragen_liste():
 
 
 @kursabgabe.route("/anfragen/neu", methods=["GET", "POST"])
+@login_required
 def anfrage_neu():
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
