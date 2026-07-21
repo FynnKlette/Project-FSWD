@@ -7,8 +7,11 @@ from studienburo import *
 from loginbp import login_blueprint
 from studburo_req import studienburo_required
 from kursabgabe import kursabgabe
+from flask_bootstrap import Bootstrap5
 
 app = Flask(__name__)
+bootstrap = Bootstrap5(app)
+
 app.register_blueprint(studienburo)
 app.register_blueprint(login_blueprint)
 app.register_blueprint(kursabgabe)
