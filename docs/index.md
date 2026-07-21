@@ -15,8 +15,7 @@ This platform is initially designed to allow students in Department 1 at HWR Ber
 
 ## Improvements / Refinements since First Submission
 
-[Assess implementation of improvements / refinements since First Submission (as presented during Oral Examination).]
-
+Since the first submission, we have successfully implemented the study office’s assessment functions. We revamped the website’s original design using Bootstrap, albeit with a few minor complications. We have also rectified a few minor errors.
 
 {: .fs-2 }
 Last build: {{ site.time | date: '%d %b %Y, %R%:z' }}
