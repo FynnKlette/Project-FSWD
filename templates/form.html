@@ -21,14 +21,14 @@
 
         <p>
             {{ form.kurs.label }}<br>
-            {{ form.kurs() }}
+            {{ form.kurs(class="form-select") }}
         </p>
 
-        <p>
-            {{ form.submit() }}
+       <p>
+            {{ form.submit(class="btn btn-primary") }}
         </p>
     </form>
 
-    <p><a href="{{ url_for('kursabgabe.abgaben_liste') }}">Zurück zur Liste</a></p>
+<p><a href="{{ url_for('kursabgabe.abgaben_liste') }}" class="btn btn-secondary">Zurück zur Liste</a></p>
 
 {% endblock%}
